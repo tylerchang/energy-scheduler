@@ -1,4 +1,4 @@
-# Energy-Aware Process Scheduling
+# Multi-Core Energy-Aware Process Scheduling w/ sched-ext
 
 ## Hardware Setup
 AMD CPU with per-core RAPL readings
