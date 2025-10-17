@@ -2,6 +2,7 @@
 
 ## Hardware Setup
 AMD CPU with per-core RAPL readings
+
 CloudLab Machine Type: r6615
 
 ## Test If Machine Supports Package-Level RAPL Readings
