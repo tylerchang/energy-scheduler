@@ -5,7 +5,19 @@ AMD CPU with per-core RAPL readings
 
 CloudLab Machine Type: r6615
 
-## Test If Machine Supports Package-Level RAPL Readings
+## Ubuntu Environment Setup
+Currently, only release 25.04 and newer are supported. If you're using an earlier release, upgrade using the command below:
+```
+sudo do-release-upgrade -d
+```
+
+## Setup Developer Environment
+```
+sudo apt install -y build-essential cmake cargo rustc clang llvm pkg-config libelf-dev protobuf-compiler libseccomp-dev libbpf-dev
+```
+
+
+## Test If Machine Supports Package-Level RAPL Readings 
 We can use the `msr` kernel module to read package-level RAPL readings
 
 ```
@@ -19,7 +31,7 @@ sudo rdmsr 0xC001029B # read the package-level energy counter
 ## Reading Per-Core RAPL Readings with amd_energy
 ### Install `amd_energy`
 ```
-git clone https://github.com/amd/amd_energy.git
+git clone git@github.com:amd/amd_energy.git
 cd amd_energy
 make
 sudo make modules_install
