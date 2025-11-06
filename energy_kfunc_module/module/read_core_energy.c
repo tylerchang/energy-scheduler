@@ -5,8 +5,18 @@
 #include <linux/btf.h>
 #include <linux/btf_ids.h>
 
+#define ENERGY_PWR_UNIT_MSR	0xC0010299
+#define ENERGY_CORE_MSR		0xC001029A
+#define ENERGY_PKG_MSR		0xC001029B
+#define AMD_ENERGY_UNIT_MASK	0x01F00
+#define AMD_ENERGY_MASK		0xFFFFFFFF
+
+int energy_units;
+
 /* Declare the kfunc prototype */
 __bpf_kfunc int read_core_energy(int cpu);
+
+static void get_energy_units(void);
 
 /* Begin kfunc definitions */
 __bpf_kfunc_start_defs();
@@ -15,6 +25,14 @@ __bpf_kfunc_start_defs();
 __visible noinline __bpf_kfunc int read_core_energy(int cpu)
 {
     printk("CPU: %d", cpu);
+    u64 input;
+    long val;
+
+    rdmsrq_safe_on_cpu(cpu, ENERGY_CORE_MSR, &input);
+    val = div64_ul(input * 1000000UL, BIT(energy_units));
+
+    printk("CPU #%d, Energy Value: %ld microJoules\n", cpu, val);
+    
     return 0;
 }
 
@@ -26,15 +44,23 @@ BTF_KFUNCS_START(bpf_kfunc_example_ids_set)
 BTF_ID_FLAGS(func, read_core_energy)
 BTF_KFUNCS_END(bpf_kfunc_example_ids_set)
 
-// BTF_SET8_START(read_core_energy_kfunc_ids)
-// BTF_ID_FLAGS(func, read_core_energy)
-// BTF_SET8_END(read_core_energy_kfunc_ids)
-
 /* Register the kfunc ID set */
 static const struct btf_kfunc_id_set bpf_kfunc_example_set = {
     .owner = THIS_MODULE,
     .set = &bpf_kfunc_example_ids_set,
 };
+
+static void get_energy_units()
+{
+    u64 rapl_units;
+
+    // #if LINUX_VERSION_CODE < KERNEL_VERSION(6, 16, 0)
+    //     rdmsrl_safe(ENERGY_PWR_UNIT_MSR, &rapl_units);
+    // #else
+    rdmsrq_safe(ENERGY_PWR_UNIT_MSR, &rapl_units);
+    //#endif
+    energy_units = (rapl_units & AMD_ENERGY_UNIT_MASK) >> 8;
+}
 
 /* Function executed when the module is loaded */
 static int __init read_core_energy_init(void)
@@ -49,6 +75,7 @@ static int __init read_core_energy_init(void)
         pr_err("bpf_kfunc_example: Failed to register BTF kfunc ID set\n");
         return ret;
     }
+    get_energy_units();
     printk(KERN_INFO "bpf_kfunc_example: Module loaded successfully\n");
     return 0; // Return 0 if successful
 }
@@ -56,9 +83,7 @@ static int __init read_core_energy_init(void)
 /* Function executed when the module is removed */
 static void __exit read_core_energy_exit(void)
 {
-    /* Unregister the BTF kfunc ID set */
-    // unregister_btf_kfunc_id_set(BPF_PROG_TYPE_KPROBE, &bpf_kfunc_example_set);
-    // printk(KERN_INFO "Goodbye, world!\n");
+ // Do nothing
 }
 
 /* Macros to define the module’s init and exit points */
@@ -67,5 +92,5 @@ module_exit(read_core_energy_exit);
 
 MODULE_LICENSE("GPL");                 // License type (GPL)
 MODULE_AUTHOR("Your Name");            // Module author
-MODULE_DESCRIPTION("A simple module"); // Module description
+MODULE_DESCRIPTION("Kernel module with kfunc for RAPL readings"); // Module description
 MODULE_VERSION("1.0");                 // Module version
