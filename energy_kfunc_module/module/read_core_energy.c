@@ -23,15 +23,16 @@ __bpf_kfunc_start_defs();
 
 /* Define the read_core_energy kfunc */
 __visible noinline __bpf_kfunc int read_core_energy(int cpu)
-{
-    printk("CPU: %d", cpu);
+{   
+    __u32 processor = get_cpu();
+    printk("CPU: %d", processor);
     u64 input;
     long val;
 
-    rdmsrq_safe_on_cpu(cpu, ENERGY_CORE_MSR, &input);
+    rdmsrq_safe(ENERGY_CORE_MSR, &input);
     val = div64_ul(input * 1000000UL, BIT(energy_units));
 
-    printk("CPU #%d, Energy Value: %ld microJoules\n", cpu, val);
+    printk("CPU #%d, Energy Value: %ld microJoules\n", processor, val);
     
     return 0;
 }
