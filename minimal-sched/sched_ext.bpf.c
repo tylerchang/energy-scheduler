@@ -15,6 +15,15 @@
     SEC("struct_ops.s/"#name)							      \
     BPF_PROG(name, ##args)
 
+extern int read_core_energy(int cpu) __ksym;
+
+struct {
+    __uint(type, BPF_MAP_TYPE_ARRAY);
+    __uint(max_entries, 1);
+    __type(key, u32); 
+    __type(value, u32);
+} limit SEC(".maps");
+
 // We use the new names from 6.13 to make it more readable
 #define scx_bpf_dsq_insert_vtime scx_bpf_dispatch_vtime
 #define scx_bpf_dsq_move scx_bpf_dispatch_from_dsq
@@ -36,6 +45,19 @@ int BPF_STRUCT_OPS(sched_enqueue, struct task_struct *p, u64 enq_flags) {
     }
     else {
         u32 cpu = bpf_get_prandom_u32() % 2;
+        u32 key = 0;
+        u32 *limit_num = bpf_map_lookup_elem(&limit, &key);
+
+        if (*limit_num < 0) {
+            bpf_map_update_elem(&limit, &key, 0, BPF_ANY);
+        }
+
+        if (*limit_num < 100) {
+            read_core_energy(1);
+            (*limit_num)++;
+            bpf_map_update_elem(&limit, &key, limit_num, BPF_ANY);
+        }
+
         scx_bpf_dsq_insert(p, SCX_DSQ_LOCAL_ON | cpu, slice, enq_flags);
     }
     

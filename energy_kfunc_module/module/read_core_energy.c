@@ -24,8 +24,7 @@ __bpf_kfunc_start_defs();
 /* Define the read_core_energy kfunc */
 __visible noinline __bpf_kfunc int read_core_energy(int cpu)
 {   
-    __u32 processor = get_cpu();
-    printk("CPU: %d", processor);
+    __u32 processor = smp_processor_id();
     u64 input;
     long val;
 
@@ -69,8 +68,8 @@ static int __init read_core_energy_init(void)
     int ret;
 
     printk(KERN_INFO "Hello, world!\n");
-    /* Register the BTF kfunc ID set for BPF_PROG_TYPE_TRACEPOINT */
-    ret = register_btf_kfunc_id_set(BPF_PROG_TYPE_TRACEPOINT, &bpf_kfunc_example_set);
+    /* Register the BTF kfunc ID set for BPF_PROG_TYPE_STRUCT_OPS */
+    ret = register_btf_kfunc_id_set(BPF_PROG_TYPE_STRUCT_OPS, &bpf_kfunc_example_set);
     if (ret)
     {
         pr_err("bpf_kfunc_example: Failed to register BTF kfunc ID set\n");
