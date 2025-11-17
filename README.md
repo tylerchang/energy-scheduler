@@ -57,6 +57,6 @@ cd /sys/class/hwmon/hwmon7
 
 In here, you should see all the available cores for reading. Reading the `_label` will tell you the name of the core and reading the `_input` will tell you the energy readings in Joules.
 
-
+https://elixir.bootlin.com/linux/v6.17/source/tools/testing/selftests/sched_ext
 
 
