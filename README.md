@@ -57,6 +57,15 @@ cd /sys/class/hwmon/hwmon7
 
 In here, you should see all the available cores for reading. Reading the `_label` will tell you the name of the core and reading the `_input` will tell you the energy readings in Joules.
 
-https://elixir.bootlin.com/linux/v6.17/source/tools/testing/selftests/sched_ext
+https://elixir.bootlin.com/linux/v6.17/source/tools/testing/selftests/sched_ext - implementation and examples of sched_ext stuff.
+https://elixir.bootlin.com/linux/v6.17.8/source/include/trace/events/sched.h#L220 - for useful scheduling tracepoints
+
+### RAPL Energy kfunc
+
+For eBPF to read the AMD RAPL energy counters, we must expose a kfunc that allows it do so. We do this by installing a kernel module containing this new kfunc. Do this by:
+
+```
+cd 
+```
 
 
