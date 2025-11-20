@@ -59,6 +59,7 @@ In here, you should see all the available cores for reading. Reading the `_label
 
 https://elixir.bootlin.com/linux/v6.17/source/tools/testing/selftests/sched_ext - implementation and examples of sched_ext stuff.
 https://elixir.bootlin.com/linux/v6.17.8/source/include/trace/events/sched.h#L220 - for useful scheduling tracepoints
+https://elixir.bootlin.com/linux/v6.17/source/tools/testing/selftests/sched_ext/maximal.bpf.c - For seeing absolutely everything that sched_ext can hook onto.
 
 ### RAPL Energy kfunc
 
