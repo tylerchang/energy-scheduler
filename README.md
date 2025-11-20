@@ -13,7 +13,7 @@ sudo do-release-upgrade -d
 
 ## Setup Developer Environment
 ```
-sudo apt install -y build-essential cmake cargo rustc clang llvm pkg-config libelf-dev protobuf-compiler libseccomp-dev libbpf-dev
+sudo apt install -y build-essential cmake cargo rustc clang llvm pkg-config libelf-dev protobuf-compiler libseccomp-dev libbpf-dev dwarves
 ```
 
 
@@ -65,7 +65,13 @@ https://elixir.bootlin.com/linux/v6.17.8/source/include/trace/events/sched.h#L22
 For eBPF to read the AMD RAPL energy counters, we must expose a kfunc that allows it do so. We do this by installing a kernel module containing this new kfunc. Do this by:
 
 ```
-cd 
+cd energy_kfunc_module/module
+cp /sys/kernel/btf/vmlinux /usr/lib/modules/`uname -r`/build/
+make
+sudo insmod read_core_energy
 ```
+
+
+
 
 
