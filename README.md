@@ -3,7 +3,11 @@
 ## Hardware Setup
 AMD CPU with per-core RAPL readings
 
-CloudLab Machine Type: r6615
+CloudLab Machine Type: r6615 or d7615
+
+- Should work with AMD EPYC 9xxx CPUs as they are part of the Zen 4 Genoa series, which was what the per-core RAPL Linux patch was developed on according to this [article](https://lwn.net/Articles/981655/)
+- Cloudlab provides a [hardware list](https://docs.cloudlab.us/hardware.html) specifying which models contain AMD CPUs
+- Here is the [availability chart](https://www.cloudlab.us/resinfo.php) for hardware when reserving
 
 ## Ubuntu Environment Setup
 Currently, only release 25.04 and newer are supported. If you're using an earlier release, upgrade using the command below:
