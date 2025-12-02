@@ -16,6 +16,10 @@
     SEC("struct_ops.s/"#name)							      \
     BPF_PROG(name, ##args)
 
+#ifndef PF_KTHREAD
+#define PF_KTHREAD 0x00200000
+#endif
+
 // --- BPF MAPS ----------------------------------------------------------------
 
 // Total system CPU time + energy accumulated
@@ -78,33 +82,77 @@ s32 BPF_STRUCT_OPS_SLEEPABLE(sched_init)
 // ----------------------------------------------------------------------------
 s32 BPF_STRUCT_OPS(sched_enqueue, struct task_struct *p, u64 flags)
 {
+
+    if (p->flags & PF_KTHREAD) {
+        // Kernel threads go to the global DSQ (can run on any CPU)
+        u64 slice = 5000000u;
+        bpf_printk("%s is being scheduled using GLOBAL QUEUE\n", p->comm);
+        scx_bpf_dsq_insert(p, SCX_DSQ_GLOBAL, slice, flags);
+        return 0;
+    }
+    bpf_printk("%s is being scheduled using EFS\n", p->comm);
+    u32 pid = p->pid;
+    u64 vpower = 1;  // default
+
+    // Optional: normalize by system totals if available
     u32 key = 0;
     struct total_consumption *tot = bpf_map_lookup_elem(&total, &key);
-    if (!tot || tot->cpu_time == 0)
-        return 0;
+    u64 system_vpower = 1;
 
-    u32 pid = p->pid;
+    if (tot && tot->cpu_time) {
+        u64 tmp = tot->energy / tot->cpu_time;
+        if (tmp > 0)
+            system_vpower = tmp;
+    }
 
-    // 1. Compute system_vpower
-    u64 system_vpower = tot->energy / tot->cpu_time;
-
-    // 2. Lookup per-PID power
     u64 *ppower = bpf_map_lookup_elem(&pid_to_power, &pid);
-    if (!ppower)
-        return 0;
-
-    // vpower = pid_power / system_vpower
-    u64 vpower = *ppower / system_vpower;
+    if (ppower && *ppower)
+        vpower = *ppower / system_vpower;   // if system_vpower==1, this is just raw ppower
 
     // 3. Read vruntime (from CFS struct)
     u64 vruntime = BPF_CORE_READ(p, se.vruntime);
     u64 venergy  = vruntime * vpower;
 
     // 4. Insert into shared DSQ ordered by venergy
-    scx_bpf_dsq_insert_vtime(p, venergy, 0, SHARED_DSQ_ID, flags);
+    scx_bpf_dsq_insert_vtime(p, SHARED_DSQ_ID, 0, venergy, flags);
+        
+    // u32 key = 0;
+    // struct total_consumption *tot = bpf_map_lookup_elem(&total, &key);
+    // if (!tot || tot->cpu_time == 0)
+    //     return 0;
+
+    // u32 pid = p->pid;
+
+    // // 1. Compute system_vpower
+    // u64 system_vpower = tot->energy / tot->cpu_time;
+
+    // // 2. Lookup per-PID power
+    // u64 *ppower = bpf_map_lookup_elem(&pid_to_power, &pid);
+    // if (!ppower)
+    //     return 0;
+
+    // // vpower = pid_power / system_vpower
+    // u64 vpower = *ppower / system_vpower;
+
+    // // 3. Read vruntime (from CFS struct)
+    // u64 vruntime = BPF_CORE_READ(p, se.vruntime);
+    // u64 venergy  = vruntime * vpower;
+
+    // // 4. Insert into shared DSQ ordered by venergy
+    // scx_bpf_dsq_insert_vtime(p, venergy, 0, SHARED_DSQ_ID, flags);
+    
 
     return 0;
 }
+
+
+
+void BPF_STRUCT_OPS(sched_dispatch, s32 cpu, struct task_struct *prev)
+{
+	scx_bpf_dsq_move_to_local(SHARED_DSQ_ID);
+}
+
+
 
 // ----------------------------------------------------------------------------
 //  sched_switch: compute energy-based power estimate, update state
@@ -199,6 +247,7 @@ SEC(".struct_ops.link")
 struct sched_ext_ops sched_ops = {
     .init      = (void *)sched_init,
     .enqueue   = (void *)sched_enqueue,
+    .dispatch  = (void *)sched_dispatch,
     .flags     = SCX_OPS_ENQ_LAST | SCX_OPS_KEEP_BUILTIN_IDLE,
     .name      = "energy_fair_scheduler",
 };

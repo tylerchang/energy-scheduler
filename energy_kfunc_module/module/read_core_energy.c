@@ -33,7 +33,7 @@ __visible noinline __bpf_kfunc int read_core_energy(int cpu)
 
     printk("CPU #%d, Energy Value: %ld microJoules\n", processor, val);
     
-    return 0;
+    return val;
 }
 
 /* End kfunc definitions */

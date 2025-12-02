@@ -3,7 +3,7 @@
 # Usage: ./build.sh bpf_file.c (default is sched_ext.bpf.c)
 
 # Set the default file
-BPF_FILE=${1:-sched_ext.bpf.c}
+BPF_FILE=${1:-gpt.bpf.c}
 
 # Create the vmlinux header with all the eBPF Linux functions
 # if it doesn'r exist
