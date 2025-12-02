@@ -74,6 +74,7 @@ extern u64 read_core_energy(int cpu) __ksym;
 // ----------------------------------------------------------------------------
 s32 BPF_STRUCT_OPS_SLEEPABLE(sched_init)
 {
+    bpf_printk("EFS SCHED INIT HAS BEEN CALLED\n");
     return scx_bpf_create_dsq(SHARED_DSQ_ID, -1);
 }
 

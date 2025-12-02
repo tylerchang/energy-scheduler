@@ -4,7 +4,7 @@
 
 # Build the scheduler if the C file is younger than the .c.o file or if the .c.o file doesn't exist
 # use sched_ext.bpf.c as default
-C_FILE=${1:-sched_ext.bpf.c}
+C_FILE=${1:-efs.bpf.c}
 
 # if --help is passed, print the usage
 
