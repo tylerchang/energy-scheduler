@@ -71,10 +71,29 @@ For eBPF to read the AMD RAPL energy counters, we must expose a kfunc that allow
 
 ```
 cd energy_kfunc_module/module
-cp /sys/kernel/btf/vmlinux /usr/lib/modules/`uname -r`/build/
+sudo cp /sys/kernel/btf/vmlinux /usr/lib/modules/`uname -r`/build/
 make
 sudo insmod read_core_energy
 ```
+
+### Running the Scheduler
+```
+cd minimal-sched/
+sudo ./build.sh
+sudo ./start.sh
+```
+
+You can check that the scheduler is running using:
+```
+cat /sys/kernel/sched_ext/root/ops
+```
+
+To stop the scheduler, run
+```
+sudo ./stop.sh
+```
+
+
 
 
 
