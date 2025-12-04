@@ -73,7 +73,7 @@ extern u64 read_core_energy(int cpu) __ksym;
 //  sched_init: create shared DSQ
 // ----------------------------------------------------------------------------
 s32 BPF_STRUCT_OPS_SLEEPABLE(sched_init)
-{
+{   
     bpf_printk("EFS SCHED INIT HAS BEEN CALLED\n");
     return scx_bpf_create_dsq(SHARED_DSQ_ID, -1);
 }
@@ -87,7 +87,7 @@ s32 BPF_STRUCT_OPS(sched_enqueue, struct task_struct *p, u64 flags)
     if (p->flags & PF_KTHREAD) {
         // Kernel threads go to the global DSQ (can run on any CPU)
         u64 slice = 5000000u;
-        bpf_printk("%s is being scheduled using GLOBAL QUEUE\n", p->comm);
+//        bpf_printk("%s is being scheduled using GLOBAL QUEUE\n", p->comm);
         scx_bpf_dsq_insert(p, SCX_DSQ_GLOBAL, slice, flags);
         return 0;
     }
@@ -153,8 +153,6 @@ void BPF_STRUCT_OPS(sched_dispatch, s32 cpu, struct task_struct *prev)
 	scx_bpf_dsq_move_to_local(SHARED_DSQ_ID);
 }
 
-
-
 // ----------------------------------------------------------------------------
 //  sched_switch: compute energy-based power estimate, update state
 // ----------------------------------------------------------------------------
@@ -163,6 +161,8 @@ int BPF_PROG(handle_sched_switch,
              struct task_struct *prev,
              struct task_struct *next)
 {
+
+    bpf_printk("HANDLE_SCHED_SWITCH: Entered function\n");
     u64 now  = bpf_ktime_get_ns();
     u32 cpu  = bpf_get_smp_processor_id();
     u32 prev_pid = BPF_CORE_READ(prev, pid);
@@ -186,6 +186,7 @@ int BPF_PROG(handle_sched_switch,
 
     // read current cumulative energy
     u64 cur_energy = read_core_energy(cpu);
+    bpf_printk("HANDLE_SCHED_SWITCH: just called read_core_energy. Got: %d\n", cur_energy);
 
     // energy consumed by prev
     u64 delta_energy = cur_energy - *prev_energy;
@@ -213,6 +214,12 @@ int BPF_PROG(handle_sched_switch,
         new_val = *cons + delta_energy;
     else   
         new_val = delta_energy;
+
+    // Update total energy consumption and cpu time
+    u32 key = 0;
+    struct total_consumption *tot = bpf_map_lookup_elem(&total, &key);
+    tot->cpu_time += delta_time;
+    tot->energy += delta_energy;
 
     bpf_map_update_elem(&pid_to_consumption, &prev_pid, &new_val, BPF_ANY);
 
@@ -249,6 +256,7 @@ struct sched_ext_ops sched_ops = {
     .init      = (void *)sched_init,
     .enqueue   = (void *)sched_enqueue,
     .dispatch  = (void *)sched_dispatch,
+    .stopping  = (void *)sched_stopping,
     .flags     = SCX_OPS_ENQ_LAST | SCX_OPS_KEEP_BUILTIN_IDLE,
     .name      = "energy_fair_scheduler",
 };
