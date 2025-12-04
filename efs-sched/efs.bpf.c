@@ -154,83 +154,179 @@ void BPF_STRUCT_OPS(sched_dispatch, s32 cpu, struct task_struct *prev)
 }
 
 // ----------------------------------------------------------------------------
-//  sched_switch: compute energy-based power estimate, update state
+//  sched_running: task just started running on this CPU
+//  - record start timestamp and baseline energy for this CPU
 // ----------------------------------------------------------------------------
-SEC("tp_btf/sched_switch")
-int BPF_PROG(handle_sched_switch,
-             struct task_struct *prev,
-             struct task_struct *next)
+void BPF_STRUCT_OPS(sched_running, struct task_struct *p)
 {
+    bpf_printk("RUNNING: function called\n");
+    if (p->flags & PF_KTHREAD)
+        return;
 
-    bpf_printk("HANDLE_SCHED_SWITCH: Entered function\n");
-    u64 now  = bpf_ktime_get_ns();
-    u32 cpu  = bpf_get_smp_processor_id();
-    u32 prev_pid = BPF_CORE_READ(prev, pid);
-    u32 next_pid = BPF_CORE_READ(next, pid);
-
-    // load previous start time
-    u64 *prev_start = bpf_map_lookup_elem(&pid_to_run_start, &prev_pid);
-    if (!prev_start) {
-        // this CPU had no prev running → just set next start time
-        bpf_map_update_elem(&pid_to_run_start, &next_pid, &now, BPF_ANY);
-        return 0;
-    }
-
-    // load previous cumulative energy for this CPU
-    u64 *prev_energy = bpf_map_lookup_elem(&cpu_to_prev_energy, &cpu);
-    if (!prev_energy) {
-        u64 cur = read_core_energy(cpu);
-        bpf_map_update_elem(&cpu_to_prev_energy, &cpu, &cur, BPF_ANY);
-        return 0;
-    }
-
-    // read current cumulative energy
+    u32 pid = p->pid;
+    u32 cpu = bpf_get_smp_processor_id();
+    u64 now = bpf_ktime_get_ns();
     u64 cur_energy = read_core_energy(cpu);
-    bpf_printk("HANDLE_SCHED_SWITCH: just called read_core_energy. Got: %d\n", cur_energy);
 
-    // energy consumed by prev
-    u64 delta_energy = cur_energy - *prev_energy;
-    u64 delta_time   = now - *prev_start;
+    // Remember when this PID started running
+    bpf_map_update_elem(&pid_to_run_start, &pid, &now, BPF_ANY);
 
+    // Remember baseline energy for this CPU
+    bpf_map_update_elem(&cpu_to_prev_energy, &cpu, &cur_energy, BPF_ANY);
+
+    // Debug (optional)
+    // bpf_printk("EFS running: pid=%d cpu=%u t=%llu e=%llu\n",
+    //            pid, cpu, now, cur_energy);
+}
+
+// ----------------------------------------------------------------------------
+//  sched_stopping: task just stopped running on this CPU
+//  - compute Δt and ΔE, update:
+//      * pid_to_power (EMA power)
+//      * pid_to_consumption (cumulative energy)
+//      * total (system totals)
+//      * cpu_to_prev_energy baseline
+// ----------------------------------------------------------------------------
+void BPF_STRUCT_OPS(sched_stopping, struct task_struct *p, bool runnable)
+{
+    if (p->flags & PF_KTHREAD)
+        return;
+
+    u32 pid = p->pid;
+    u32 cpu = bpf_get_smp_processor_id();
+    u64 now = bpf_ktime_get_ns();
+
+    u64 *start = bpf_map_lookup_elem(&pid_to_run_start, &pid);
+    u64 *prev_energy = bpf_map_lookup_elem(&cpu_to_prev_energy, &cpu);
+    if (!start || !prev_energy)
+        return;
+
+    u64 cur_energy = read_core_energy(cpu);
+    bpf_printk("STOPPING: read core energy: %d\n", cur_energy);
+
+    u64 delta_time = now - *start;
     if (delta_time == 0)
-        delta_time = 1;  // avoid div-by-zero
+        delta_time = 1; // avoid div-by-zero
 
-    // instantaneous power = ΔE / Δt
+    u64 delta_energy = cur_energy - *prev_energy;
+
+    // instantaneous power over this run interval
     u64 new_power = delta_energy / delta_time;
 
     // update EMA power
     u64 old_power = 0;
-    u64 *pp = bpf_map_lookup_elem(&pid_to_power, &prev_pid);
+    u64 *pp = bpf_map_lookup_elem(&pid_to_power, &pid);
     if (pp)
         old_power = *pp;
 
     u64 ema = 1000 * ((old_power / 2) + (new_power / 2));
-    bpf_map_update_elem(&pid_to_power, &prev_pid, &ema, BPF_ANY);
+    bpf_map_update_elem(&pid_to_power, &pid, &ema, BPF_ANY);
 
     // update cumulative per-PID energy
-    u64 *cons = bpf_map_lookup_elem(&pid_to_consumption, &prev_pid);
+    u64 *cons = bpf_map_lookup_elem(&pid_to_consumption, &pid);
     u64 new_val;
     if (cons)
         new_val = *cons + delta_energy;
-    else   
+    else
         new_val = delta_energy;
 
-    // Update total energy consumption and cpu time
-    u32 key = 0;
-    struct total_consumption *tot = bpf_map_lookup_elem(&total, &key);
-    tot->cpu_time += delta_time;
-    tot->energy += delta_energy;
+    bpf_map_update_elem(&pid_to_consumption, &pid, &new_val, BPF_ANY);
 
-    bpf_map_update_elem(&pid_to_consumption, &prev_pid, &new_val, BPF_ANY);
+    // update total energy consumption and cpu time
+    u32 key0 = 0;
+    struct total_consumption *tot = bpf_map_lookup_elem(&total, &key0);
+    if (tot) {
+        tot->cpu_time += delta_time;
+        tot->energy   += delta_energy;
+    }
 
-    // update CPU energy snapshot
+    // update CPU energy snapshot for the next interval
     bpf_map_update_elem(&cpu_to_prev_energy, &cpu, &cur_energy, BPF_ANY);
 
-    // update next start time
-    bpf_map_update_elem(&pid_to_run_start, &next_pid, &now, BPF_ANY);
-
-    return 0;
+    // Debug (optional)
+    // bpf_printk("EFS stopping: pid=%d cpu=%u dE=%llu dT=%llu ema=%llu\n",
+    //            pid, cpu, delta_energy, delta_time, ema);
 }
+
+
+// ----------------------------------------------------------------------------
+//  sched_switch: compute energy-based power estimate, update state
+// ----------------------------------------------------------------------------
+// SEC("tp_btf/sched_switch")
+// int BPF_PROG(handle_sched_switch,
+//              struct task_struct *prev,
+//              struct task_struct *next)
+// {
+
+//     bpf_printk("HANDLE_SCHED_SWITCH: Entered function\n");
+//     u64 now  = bpf_ktime_get_ns();
+//     u32 cpu  = bpf_get_smp_processor_id();
+//     u32 prev_pid = BPF_CORE_READ(prev, pid);
+//     u32 next_pid = BPF_CORE_READ(next, pid);
+
+//     // load previous start time
+//     u64 *prev_start = bpf_map_lookup_elem(&pid_to_run_start, &prev_pid);
+//     if (!prev_start) {
+//         // this CPU had no prev running → just set next start time
+//         bpf_map_update_elem(&pid_to_run_start, &next_pid, &now, BPF_ANY);
+//         return 0;
+//     }
+
+//     // load previous cumulative energy for this CPU
+//     u64 *prev_energy = bpf_map_lookup_elem(&cpu_to_prev_energy, &cpu);
+//     if (!prev_energy) {
+//         u64 cur = read_core_energy(cpu);
+//         bpf_map_update_elem(&cpu_to_prev_energy, &cpu, &cur, BPF_ANY);
+//         return 0;
+//     }
+
+//     // read current cumulative energy
+//     u64 cur_energy = read_core_energy(cpu);
+//     bpf_printk("HANDLE_SCHED_SWITCH: just called read_core_energy. Got: %d\n", cur_energy);
+
+//     // energy consumed by prev
+//     u64 delta_energy = cur_energy - *prev_energy;
+//     u64 delta_time   = now - *prev_start;
+
+//     if (delta_time == 0)
+//         delta_time = 1;  // avoid div-by-zero
+
+//     // instantaneous power = ΔE / Δt
+//     u64 new_power = delta_energy / delta_time;
+
+//     // update EMA power
+//     u64 old_power = 0;
+//     u64 *pp = bpf_map_lookup_elem(&pid_to_power, &prev_pid);
+//     if (pp)
+//         old_power = *pp;
+
+//     u64 ema = 1000 * ((old_power / 2) + (new_power / 2));
+//     bpf_map_update_elem(&pid_to_power, &prev_pid, &ema, BPF_ANY);
+
+//     // update cumulative per-PID energy
+//     u64 *cons = bpf_map_lookup_elem(&pid_to_consumption, &prev_pid);
+//     u64 new_val;
+//     if (cons)
+//         new_val = *cons + delta_energy;
+//     else   
+//         new_val = delta_energy;
+
+//     // Update total energy consumption and cpu time
+//     u32 key = 0;
+//     struct total_consumption *tot = bpf_map_lookup_elem(&total, &key);
+//     tot->cpu_time += delta_time;
+//     tot->energy += delta_energy;
+
+//     bpf_map_update_elem(&pid_to_consumption, &prev_pid, &new_val, BPF_ANY);
+
+//     // update CPU energy snapshot
+//     bpf_map_update_elem(&cpu_to_prev_energy, &cpu, &cur_energy, BPF_ANY);
+
+//     // update next start time
+//     bpf_map_update_elem(&pid_to_run_start, &next_pid, &now, BPF_ANY);
+
+//     return 0;
+// }
 
 // ----------------------------------------------------------------------------
 //  exit_task: cleanup dead PID state
@@ -256,6 +352,7 @@ struct sched_ext_ops sched_ops = {
     .init      = (void *)sched_init,
     .enqueue   = (void *)sched_enqueue,
     .dispatch  = (void *)sched_dispatch,
+    .running   = (void *)sched_running,
     .stopping  = (void *)sched_stopping,
     .flags     = SCX_OPS_ENQ_LAST | SCX_OPS_KEEP_BUILTIN_IDLE,
     .name      = "energy_fair_scheduler",

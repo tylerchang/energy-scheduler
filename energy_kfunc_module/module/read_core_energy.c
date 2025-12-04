@@ -69,8 +69,8 @@ static int __init read_core_energy_init(void)
 
     printk(KERN_INFO "Hello, world!\n");
     /* Register the BTF kfunc ID set for BPF_PROG_TYPE_STRUCT_OPS */
-    // ret = register_btf_kfunc_id_set(BPF_PROG_TYPE_STRUCT_OPS, &bpf_kfunc_example_set);
-    ret = register_btf_kfunc_id_set(BPF_PROG_TYPE_TRACEPOINT, &bpf_kfunc_example_set);
+    ret = register_btf_kfunc_id_set(BPF_PROG_TYPE_STRUCT_OPS, &bpf_kfunc_example_set);
+    // ret = register_btf_kfunc_id_set(BPF_, &bpf_kfunc_example_set);
     if (ret)
     {
         pr_err("bpf_kfunc_example: Failed to register BTF kfunc ID set\n");
