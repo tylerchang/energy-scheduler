@@ -93,7 +93,23 @@ To stop the scheduler, run
 sudo ./stop.sh
 ```
 
+To observe trace logs of the scheduler:
+```
+sudo bpftool prog tracelog
+```
 
+In order to read from the eBPF maps exposed by the EFS scheduler
+```
+sudo mkdir -p /sys/fs/bpf/efs
+sudo bpftool map pin id 115 /sys/fs/bpf/efs/total
+sudo bpftool map pin id 116 /sys/fs/bpf/efs/pid_to_consumption
+sudo bpftool map pin id 117 /sys/fs/bpf/efs/pid_to_power
+sudo bpftool map pin id 119 /sys/fs/bpf/efs/cpu_to_prev_energy
+```
+And then run the userspace program:
+```
+./poll_maps
+```
 
 
 
