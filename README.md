@@ -94,7 +94,12 @@ sudo ./stop.sh
 ```
 
 
-
+# Current TODOs
+1. Figure out why rolling pid_to_power keeps increasing for a given process (stress_core)
+2. Reunderstand sched-running and sched-stop and confirm math
+3. Workloads 
+    - Memory intensive process doing random reads / writes
+    - CPU intensive process doing SHA hashing computation
 
 
 

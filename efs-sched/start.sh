@@ -26,3 +26,13 @@ sudo bpftool struct_ops register ${C_FILE}.o /sys/fs/bpf/sched_ext || (echo "Err
 
 # Print scheduler name, fails if it isn't registered properly
 cat /sys/kernel/sched_ext/root/ops || (echo "No sched-ext scheduler installed" && exit 1)
+
+
+# Pin the maps
+sudo mkdir -p /sys/fs/bpf/efs
+sudo bpftool map pin name total /sys/fs/bpf/efs/total
+sudo bpftool map pin name pid_to_consumpt /sys/fs/bpf/efs/pid_to_consumption
+sudo bpftool map pin name pid_to_power /sys/fs/bpf/efs/pid_to_power
+sudo bpftool map pin name cpu_to_prev_ene /sys/fs/bpf/efs/cpu_to_prev_energy
+sudo bpftool map pin name pid_to_run_star /sys/fs/bpf/efs/pid_to_run_start
+

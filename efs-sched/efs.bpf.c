@@ -61,13 +61,13 @@ struct {
 
 // CPU → last cumulative energy reading
 struct {
-    __uint(type, BPF_MAP_TYPE_PERCPU_HASH);
+    __uint(type, BPF_MAP_TYPE_HASH);
     __uint(max_entries, 1024);
     __type(key, u32);
     __type(value, u64);
 } cpu_to_prev_energy SEC(".maps");
 
-extern u64 read_core_energy(int cpu) __ksym;
+extern u64 read_core_energy(void) __ksym;
 
 // ----------------------------------------------------------------------------
 //  sched_init: create shared DSQ
@@ -91,7 +91,7 @@ s32 BPF_STRUCT_OPS(sched_enqueue, struct task_struct *p, u64 flags)
         scx_bpf_dsq_insert(p, SCX_DSQ_GLOBAL, slice, flags);
         return 0;
     }
-    bpf_printk("%s is being scheduled using EFS\n", p->comm);
+    bpf_printk("[sched_enqueue]: %s scheduled using EFS\n", p->comm);
     u32 pid = p->pid;
     u64 vpower = 1;  // default
 
@@ -150,6 +150,7 @@ s32 BPF_STRUCT_OPS(sched_enqueue, struct task_struct *p, u64 flags)
 
 void BPF_STRUCT_OPS(sched_dispatch, s32 cpu, struct task_struct *prev)
 {
+    // bpf_printk("[sched_dispatch] CPU %d called dispatch.", cpu);
 	scx_bpf_dsq_move_to_local(SHARED_DSQ_ID);
 }
 
@@ -159,14 +160,16 @@ void BPF_STRUCT_OPS(sched_dispatch, s32 cpu, struct task_struct *prev)
 // ----------------------------------------------------------------------------
 void BPF_STRUCT_OPS(sched_running, struct task_struct *p)
 {
-    bpf_printk("RUNNING: function called\n");
     if (p->flags & PF_KTHREAD)
         return;
 
     u32 pid = p->pid;
     u32 cpu = bpf_get_smp_processor_id();
     u64 now = bpf_ktime_get_ns();
-    u64 cur_energy = read_core_energy(cpu);
+    u64 cur_energy = read_core_energy();
+
+
+    bpf_printk("RUNNING: PID=%d cpu=%d, cur_energy:%llu\n",pid,cpu,cur_energy);    
 
     // Remember when this PID started running
     bpf_map_update_elem(&pid_to_run_start, &pid, &now, BPF_ANY);
@@ -198,20 +201,29 @@ void BPF_STRUCT_OPS(sched_stopping, struct task_struct *p, bool runnable)
 
     u64 *start = bpf_map_lookup_elem(&pid_to_run_start, &pid);
     u64 *prev_energy = bpf_map_lookup_elem(&cpu_to_prev_energy, &cpu);
-    if (!start || !prev_energy)
+    if (!start)
         return;
 
-    u64 cur_energy = read_core_energy(cpu);
-    bpf_printk("STOPPING: read core energy: %d\n", cur_energy);
+    u64 cur_energy = read_core_energy();
+
+    if(!prev_energy){
+        bpf_printk("STOPPING: cpu %d not found in cpu_to_prev\n", cpu);
+        bpf_map_update_elem(&cpu_to_prev_energy, &cpu, &cur_energy, BPF_ANY);
+        return;
+    }
 
     u64 delta_time = now - *start;
     if (delta_time == 0)
         delta_time = 1; // avoid div-by-zero
 
-    u64 delta_energy = cur_energy - *prev_energy;
+
+    if (*prev_energy == cur_energy){
+        return;
+    }
+    u64 delta_energy = (cur_energy - *prev_energy) * 10000;
 
     // instantaneous power over this run interval
-    u64 new_power = delta_energy / delta_time;
+    u64 new_power = (delta_energy / delta_time);
 
     // update EMA power
     u64 old_power = 0;
@@ -219,8 +231,20 @@ void BPF_STRUCT_OPS(sched_stopping, struct task_struct *p, bool runnable)
     if (pp)
         old_power = *pp;
 
-    u64 ema = 1000 * ((old_power / 2) + (new_power / 2));
+    bpf_printk("[sched_stopping]: comm=%s, PID=%d cpu=%d old=%llu new=%llu dE=%llu dT=%llu prevE=%llu curE=%llu\n",
+           p->comm,
+           pid,
+           cpu,
+           old_power,
+           new_power,
+           delta_energy,
+           delta_time,
+           *prev_energy,
+           cur_energy);    
+    u64 ema = ((old_power / 2) + (new_power / 2));
     bpf_map_update_elem(&pid_to_power, &pid, &ema, BPF_ANY);
+    bpf_printk("STOPPING: pid_to_power updated, PID: %d, EMA: %d\n", pid, ema);
+
 
     // update cumulative per-PID energy
     u64 *cons = bpf_map_lookup_elem(&pid_to_consumption, &pid);
@@ -231,6 +255,7 @@ void BPF_STRUCT_OPS(sched_stopping, struct task_struct *p, bool runnable)
         new_val = delta_energy;
 
     bpf_map_update_elem(&pid_to_consumption, &pid, &new_val, BPF_ANY);
+    
 
     // update total energy consumption and cpu time
     u32 key0 = 0;

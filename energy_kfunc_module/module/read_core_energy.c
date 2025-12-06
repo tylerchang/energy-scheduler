@@ -14,7 +14,7 @@
 int energy_units;
 
 /* Declare the kfunc prototype */
-__bpf_kfunc int read_core_energy(int cpu);
+__bpf_kfunc u64 read_core_energy(void);
 
 static void get_energy_units(void);
 
@@ -22,17 +22,13 @@ static void get_energy_units(void);
 __bpf_kfunc_start_defs();
 
 /* Define the read_core_energy kfunc */
-__visible noinline __bpf_kfunc int read_core_energy(int cpu)
+__visible noinline __bpf_kfunc u64 read_core_energy()
 {   
-    __u32 processor = smp_processor_id();
     u64 input;
-    long val;
+    u64 val;
 
     rdmsrq_safe(ENERGY_CORE_MSR, &input);
-    val = div64_ul(input * 1000000UL, BIT(energy_units));
-
-    printk("CPU #%d, Energy Value: %ld microJoules\n", processor, val);
-    
+    val = div64_ul(input * 1000000UL, BIT(energy_units));    
     return val;
 }
 
