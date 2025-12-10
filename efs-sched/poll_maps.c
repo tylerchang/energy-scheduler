@@ -18,6 +18,7 @@ struct total_consumption {
 
 static volatile sig_atomic_t stop;
 static int pid_filter = -1;  // < 0 means "no PID filter"
+static char comm_filter[256] = {0};  // NEW: comm filter; empty = no filter
 
 /* Which maps to show */
 static int show_total       = 1;
@@ -43,6 +44,43 @@ static int open_map(const char *path)
                 path, strerror(errno));
     }
     return fd;
+}
+
+/* ------------ helper: does this PID match our filter? ------------------- */
+
+static int pid_matches_filter(__u32 pid)
+{
+    if (pid_filter > 0 && comm_filter[0] == '\0') {
+        // PID-only filter
+        return pid == (unsigned)pid_filter;
+    }
+
+    if (comm_filter[0] != '\0') {
+        // comm-based filter: check /proc/<pid>/comm
+        char path[64];
+        snprintf(path, sizeof(path), "/proc/%u/comm", pid);
+
+        FILE *f = fopen(path, "r");
+        if (!f)
+            return 0;
+
+        char buf[256];
+        if (!fgets(buf, sizeof(buf), f)) {
+            fclose(f);
+            return 0;
+        }
+        fclose(f);
+
+        // Trim trailing newline
+        size_t len = strlen(buf);
+        if (len > 0 && buf[len - 1] == '\n')
+            buf[len - 1] = '\0';
+
+        return strcmp(buf, comm_filter) == 0;
+    }
+
+    // No filter
+    return 1;
 }
 
 /* ---------------- System totals ------------------------------------------ */
@@ -82,7 +120,10 @@ static void print_pid_to_power_single(int fd_power, __u32 pid)
 
 static void print_pid_to_power_all(int fd_power)
 {
-    printf("=== PID → power (EMA) (pid_to_power) ===\n");
+    printf("=== PID → power (EMA) (pid_to_power)");
+    if (comm_filter[0])
+        printf(" [comm=\"%s\"]", comm_filter);
+    printf(" ===\n");
     printf("%-8s %-18s\n", "PID", "power");
 
     __u32 prev_key = 0;
@@ -107,6 +148,11 @@ static void print_pid_to_power_all(int fd_power)
 
         __u32 pid = cur_key;
         __u64 power = 0;
+
+        if (!pid_matches_filter(pid)) {
+            prev_key = cur_key;
+            continue;
+        }
 
         if (bpf_map_lookup_elem(fd_power, &pid, &power) == 0) {
             if (power != 0) {
@@ -140,7 +186,10 @@ static void print_pid_to_consumption_single(int fd_consumption, __u32 pid)
 
 static void print_pid_to_consumption_all(int fd_consumption)
 {
-    printf("=== PID → cumulative energy (pid_to_consumption) ===\n");
+    printf("=== PID → cumulative energy (pid_to_consumption)");
+    if (comm_filter[0])
+        printf(" [comm=\"%s\"]", comm_filter);
+    printf(" ===\n");
     printf("%-8s %-18s\n", "PID", "energy");
 
     __u32 prev_key = 0;
@@ -165,6 +214,11 @@ static void print_pid_to_consumption_all(int fd_consumption)
 
         __u32 pid = cur_key;
         __u64 energy = 0;
+
+        if (!pid_matches_filter(pid)) {
+            prev_key = cur_key;
+            continue;
+        }
 
         if (bpf_map_lookup_elem(fd_consumption, &pid, &energy) == 0) {
             printf("%-8u %-18llu\n",
@@ -196,7 +250,10 @@ static void print_pid_to_run_start_single(int fd_run_start, __u32 pid)
 
 static void print_pid_to_run_start_all(int fd_run_start)
 {
-    printf("=== PID → run start time (pid_to_run_start) ===\n");
+    printf("=== PID → run start time (pid_to_run_start)");
+    if (comm_filter[0])
+        printf(" [comm=\"%s\"]", comm_filter);
+    printf(" ===\n");
     printf("%-8s %-24s\n", "PID", "start_time_ns");
 
     __u32 prev_key = 0;
@@ -221,6 +278,11 @@ static void print_pid_to_run_start_all(int fd_run_start)
 
         __u32 pid = cur_key;
         __u64 start_time = 0;
+
+        if (!pid_matches_filter(pid)) {
+            prev_key = cur_key;
+            continue;
+        }
 
         if (bpf_map_lookup_elem(fd_run_start, &pid, &start_time) == 0) {
             printf("%-8u %-24llu\n",
@@ -283,21 +345,22 @@ static void usage(const char *prog)
 {
     fprintf(stderr,
             "Usage:\n"
-            "  %s [interval_ms] [pid_filter] [map ...]\n"
+            "  %s [interval_ms] [pid_filter|comm=NAME|-] [map ...]\n"
             "\n"
             "  interval_ms  : polling interval in milliseconds (default: 1000)\n"
             "  pid_filter   : PID to filter on (0 or '-' for none)\n"
+            "                 Or 'comm=NAME' to filter by /proc/<pid>/comm\n"
             "  map          : one or more of:\n"
             "                 total, power, consumption, run_start, cpu_prev\n"
             "                 If no maps are listed, all are shown.\n"
             "\n"
             "Examples:\n"
-            "  %s                    # 1000 ms, no PID filter, all maps\n"
-            "  %s 500                # 500 ms, no PID filter, all maps\n"
+            "  %s                    # 1000 ms, no PID/comm filter, all maps\n"
+            "  %s 500                # 500 ms, no PID/comm filter, all maps\n"
             "  %s 1000 12345         # 1s, PID=12345, all maps\n"
-            "  %s 1000 12345 power consumption\n"
+            "  %s 1000 comm=mem_test power consumption\n"
             "  %s 1000 - total cpu_prev\n",
-            prog, prog, prog, prog, prog);
+            prog, prog, prog, prog, prog, prog);
 }
 
 static void init_map_filters_from_args(int argc, char **argv, int start_idx)
@@ -364,7 +427,7 @@ int main(int argc, char **argv)
      *   poll_maps
      *   poll_maps 500
      *   poll_maps 1000 12345
-     *   poll_maps 1000 12345 power consumption
+     *   poll_maps 1000 comm=mem_test power consumption
      *   poll_maps 1000 - total cpu_prev
      */
     int argi = 1;
@@ -379,10 +442,16 @@ int main(int argc, char **argv)
     if (argi < argc) {
         if (strcmp(argv[argi], "-") == 0) {
             pid_filter = -1;
+            comm_filter[0] = '\0';
+        } else if (strncmp(argv[argi], "comm=", 5) == 0) {  // NEW
+            pid_filter = -1;
+            strncpy(comm_filter, argv[argi] + 5, sizeof(comm_filter) - 1);
+            comm_filter[sizeof(comm_filter) - 1] = '\0';
         } else {
             pid_filter = atoi(argv[argi]);
             if (pid_filter <= 0)
                 pid_filter = -1;
+            comm_filter[0] = '\0';
         }
         argi++;
     }
@@ -414,6 +483,8 @@ int main(int argc, char **argv)
            interval_ms);
     if (pid_filter > 0)
         printf("Filtering on PID %d\n", pid_filter);
+    if (comm_filter[0])
+        printf("Filtering on comm \"%s\"\n", comm_filter);
     printf("Maps shown: ");
     if (show_total)       printf("total ");
     if (show_power)       printf("power ");
@@ -439,6 +510,8 @@ int main(int argc, char **argv)
         printf("Real time since poller start: %.6f s\n", elapsed_real);
         if (pid_filter > 0)
             printf("Filter: PID %d\n", pid_filter);
+        if (comm_filter[0])
+            printf("Filter: comm \"%s\"\n", comm_filter);
 
         printf("Maps shown: ");
         if (show_total)       printf("total ");
@@ -451,25 +524,24 @@ int main(int argc, char **argv)
         if (show_total)
             print_system_totals(fd_total);
 
-        if (pid_filter > 0) {
-            __u32 pid = (unsigned int)pid_filter;
-
-            if (show_power)
-                print_pid_to_power_single(fd_power, pid);
-
-            if (show_consumption)
-                print_pid_to_consumption_single(fd_consumption, pid);
-
-            if (show_run_start)
-                print_pid_to_run_start_single(fd_run_start, pid);
-        } else {
-            if (show_power)
+        if (show_power) {
+            if (pid_filter > 0 && comm_filter[0] == '\0')
+                print_pid_to_power_single(fd_power, (unsigned)pid_filter);
+            else
                 print_pid_to_power_all(fd_power);
+        }
 
-            if (show_consumption)
+        if (show_consumption) {
+            if (pid_filter > 0 && comm_filter[0] == '\0')
+                print_pid_to_consumption_single(fd_consumption, (unsigned)pid_filter);
+            else
                 print_pid_to_consumption_all(fd_consumption);
+        }
 
-            if (show_run_start)
+        if (show_run_start) {
+            if (pid_filter > 0 && comm_filter[0] == '\0')
+                print_pid_to_run_start_single(fd_run_start, (unsigned)pid_filter);
+            else
                 print_pid_to_run_start_all(fd_run_start);
         }
 

@@ -112,12 +112,24 @@ And then run the userspace program:
 ```
 ./poll_maps
 ```
+
+# Useful Commands
+`sudo ./poll_maps 100 comm=mem_miss power consumption | tee out.log`
+`python plot_power.py out.log graph.png --wall`
+
 # Current TODOs
 1. Figure out why rolling pid_to_power keeps increasing for a given process (stress_core)
 2. Reunderstand sched-running and sched-stop and confirm math
 3. Workloads 
-    - Memory intensive process doing random reads / writes
-    - CPU intensive process doing SHA hashing computation
+    - [x] Memory intensive process doing random reads / writes
+    - [x] CPU intensive process doing SHA hashing computation
+
+# Plans for Slides
+1. Intro + HotCarbon Limitations + Per-Process Energy Readings over Multi-Core
+2. Poll Map Output Demonstration (all the maps)
+3. Two workloads + Graphs for both
+4. Varying-Core Effects on Energy. Given a constant number of processes, observe energy usage during high concurrency vs parallelism
+5. Findings + Future Work
 
 
 
