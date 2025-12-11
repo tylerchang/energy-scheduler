@@ -131,6 +131,11 @@ And then run the userspace program:
 4. Varying-Core Effects on Energy. Given a constant number of processes, observe energy usage during high concurrency vs parallelism
 5. Findings + Future Work
 
+# VERY INTERESTING
+
+source for all the AMD RAPL MSR registers are here: https://elixir.bootlin.com/linux/v6.18/source/arch/x86/include/asm/msr-index.h
+also an explanation for some of the MSRs are here: https://github.com/powerapi-ng/pyJoules/blob/a82c184aa14b397cf138b63b8794d075e68aeece/README.md
+1. try reading other power readings of different components of the cpu package.
 
 
 
