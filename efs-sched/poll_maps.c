@@ -14,6 +14,7 @@
 struct total_consumption {
     __u64 cpu_time;
     __u64 energy;
+    __u64 uncore_energy;
 };
 
 static volatile sig_atomic_t stop;
@@ -48,6 +49,8 @@ static int open_map(const char *path)
 
 /* ------------ helper: does this PID match our filter? ------------------- */
 
+/* ------------ helper: does this PID match our filter? ------------------- */
+
 static int pid_matches_filter(__u32 pid)
 {
     if (pid_filter > 0 && comm_filter[0] == '\0') {
@@ -76,12 +79,18 @@ static int pid_matches_filter(__u32 pid)
         if (len > 0 && buf[len - 1] == '\n')
             buf[len - 1] = '\0';
 
-        return strcmp(buf, comm_filter) == 0;
+        // PREFIX match instead of exact match:
+        size_t flen = strlen(comm_filter);
+        if (flen == 0)
+            return 1;  // should not happen, but be permissive
+
+        return strncmp(buf, comm_filter, flen) == 0;
     }
 
     // No filter
     return 1;
 }
+
 
 /* ---------------- System totals ------------------------------------------ */
 
@@ -96,6 +105,8 @@ static void print_system_totals(int fd_total)
                (unsigned long long)tot.cpu_time);
         printf("  energy:    %llu (units of your kfunc)\n",
                (unsigned long long)tot.energy);
+        printf("  uncore_energy:    %llu (units of your kfunc)\n",
+               (unsigned long long)tot.uncore_energy);
     } else {
         printf("  (no data yet)\n");
     }

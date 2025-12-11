@@ -57,6 +57,7 @@ static __always_inline bool debug_task(const struct task_struct *p)
 struct total_consumption {
     u64 cpu_time;
     u64 energy;
+    u64 uncore_energy;
 };
 
 struct {
@@ -98,7 +99,14 @@ struct {
     __type(value, u64);
 } cpu_to_prev_energy SEC(".maps");
 
-extern u64 read_core_energy(void) __ksym;
+struct energy_measurement {
+    u64 core_energy;
+    u64 dram_energy;
+    u64 gpu_energy;
+    u64 package_energy;
+};
+
+extern void read_core_energy(struct energy_measurement* result) __ksym;
 
 // ----------------------------------------------------------------------------
 //  sched_init: create shared DSQ
@@ -156,8 +164,7 @@ s32 BPF_STRUCT_OPS(sched_enqueue, struct task_struct *p, u64 flags)
 
 void BPF_STRUCT_OPS(sched_dispatch, s32 cpu, struct task_struct *prev)
 {
-    // bpf_printk("[sched_dispatch] CPU %d called dispatch.", cpu);
-	scx_bpf_dsq_move_to_local(SHARED_DSQ_ID);
+    scx_bpf_dsq_move_to_local(SHARED_DSQ_ID);
 }
 
 
@@ -187,9 +194,14 @@ void BPF_STRUCT_OPS(sched_running, struct task_struct *p)
     u32 pid = p->pid;
     u32 cpu = bpf_get_smp_processor_id();
     u64 now = bpf_ktime_get_ns();
-    u64 cur_energy = read_core_energy();
 
-    DBG(p, "[RUNNING]: comm=%s pid=%d cpu=%d cur_energy:%llu\n", debug_prog, p->pid, cpu, cur_energy);
+    struct energy_measurement result = {};
+    read_core_energy(&result);
+    u64 cur_energy = result.core_energy;
+    u64 dram_energy = result.dram_energy;
+    u64 gpu_energy = result.gpu_energy;
+
+    DBG(p, "[RUNNING]: comm=%s pid=%d cpu=%d cur_energy:%llu dram_energy:%llu gpu_energy:%llu\n", debug_prog, p->pid, cpu, cur_energy, dram_energy, gpu_energy);
 
     // bpf_printk("RUNNING: PID=%d cpu=%d, cur_energy:%llu\n",pid,cpu,cur_energy);    
 
@@ -223,7 +235,9 @@ void BPF_STRUCT_OPS(sched_stopping, struct task_struct *p, bool runnable)
     if (!start)
         return;
 
-    u64 cur_energy = read_core_energy();
+    struct energy_measurement result = {};
+    read_core_energy(&result);
+    u64 cur_energy = result.core_energy;
 
     if(!prev_energy){
         DBG(p,"STOPPING: cpu %d not found in cpu_to_prev\n", cpu);
@@ -282,6 +296,9 @@ void BPF_STRUCT_OPS(sched_stopping, struct task_struct *p, bool runnable)
     if (tot) {
         tot->cpu_time += delta_time;
         tot->energy   += delta_energy;
+        bpf_printk("package energy: %llu\n", result.package_energy);
+        tot->uncore_energy = (10000 * result.package_energy) - tot->energy;
+        bpf_printk("new uncore: %llu\n", tot->uncore_energy);
     }
 
     // update CPU energy snapshot for the next interval

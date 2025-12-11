@@ -5,31 +5,61 @@
 #include <linux/btf.h>
 #include <linux/btf_ids.h>
 
+// CPU CORE
 #define ENERGY_PWR_UNIT_MSR	0xC0010299
 #define ENERGY_CORE_MSR		0xC001029A
 #define ENERGY_PKG_MSR		0xC001029B
 #define AMD_ENERGY_UNIT_MASK	0x01F00
 #define AMD_ENERGY_MASK		0xFFFFFFFF
 
+// DRAM
+#define DRAM_ENERGY_MSR 0x00000619
+
+// Integrated GPU
+#define INTEGRATED_GPU_MSR 0x00000641
+
+// PACKAGE ENERGY
+#define PACKAGE_ENERGY_MSR 0xC001029B
+
+
 int energy_units;
 
+
+struct energy_measurement {
+    u64 core_energy;
+    u64 dram_energy;
+    u64 gpu_energy;
+    u64 package_energy;
+};
+
 /* Declare the kfunc prototype */
-__bpf_kfunc u64 read_core_energy(void);
+__bpf_kfunc void read_core_energy(struct energy_measurement* result);
 
 static void get_energy_units(void);
 
 /* Begin kfunc definitions */
 __bpf_kfunc_start_defs();
 
-/* Define the read_core_energy kfunc */
-__visible noinline __bpf_kfunc u64 read_core_energy()
-{   
-    u64 input;
-    u64 val;
 
-    rdmsrq_safe(ENERGY_CORE_MSR, &input);
-    val = div64_ul(input * 1000000UL, BIT(energy_units));    
-    return val;
+/* Define the read_core_energy kfunc */
+__visible noinline __bpf_kfunc void read_core_energy(struct energy_measurement* result)
+{   
+    u64 core;
+    u64 dram;
+    u64 gpu;
+    u64 package;
+    rdmsrq_safe(ENERGY_CORE_MSR, &core);
+    rdmsrq_safe(DRAM_ENERGY_MSR, &dram);
+    rdmsrq_safe(INTEGRATED_GPU_MSR, &gpu);
+    rdmsrq_safe(ENERGY_PKG_MSR, &package);
+
+    pr_info("KFUNC: before package=%llu\n", package);
+
+    result->core_energy = div64_ul(core * 1000000UL, BIT(energy_units));
+    result->dram_energy = div64_ul(dram * 1000000UL, BIT(energy_units));    
+    result->gpu_energy = div64_ul(gpu * 1000000UL, BIT(energy_units));        
+    result->package_energy = div64_ul(package * 1000000UL, BIT(energy_units));    
+    pr_info("KFUNC: after package=%llu\n", result->package_energy);
 }
 
 /* End kfunc definitions */
