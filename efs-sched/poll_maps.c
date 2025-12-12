@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include <time.h>   // <-- NEW
+#include <time.h>
 
 // Must match your BPF struct definition
 struct total_consumption {
@@ -18,8 +18,8 @@ struct total_consumption {
 };
 
 static volatile sig_atomic_t stop;
-static int pid_filter = -1;  // < 0 means "no PID filter"
-static char comm_filter[256] = {0};  // NEW: comm filter; empty = no filter
+static int pid_filter = -1;               // < 0 means "no PID filter"
+static char comm_filter[256] = {0};       // comm filter; empty = no filter
 
 /* Which maps to show */
 static int show_total       = 1;
@@ -46,8 +46,6 @@ static int open_map(const char *path)
     }
     return fd;
 }
-
-/* ------------ helper: does this PID match our filter? ------------------- */
 
 /* ------------ helper: does this PID match our filter? ------------------- */
 
@@ -91,6 +89,35 @@ static int pid_matches_filter(__u32 pid)
     return 1;
 }
 
+/* ------------ helper: get comm for a PID (for printing) ----------------- */
+
+static int get_comm_for_pid(__u32 pid, char *buf, size_t buflen)
+{
+    char path[64];
+    snprintf(path, sizeof(path), "/proc/%u/comm", pid);
+
+    FILE *f = fopen(path, "r");
+    if (!f) {
+        if (buflen > 0)
+            buf[0] = '\0';
+        return -1;
+    }
+
+    if (!fgets(buf, buflen, f)) {
+        fclose(f);
+        if (buflen > 0)
+            buf[0] = '\0';
+        return -1;
+    }
+    fclose(f);
+
+    // Trim trailing newline
+    size_t len = strlen(buf);
+    if (len > 0 && buf[len - 1] == '\n')
+        buf[len - 1] = '\0';
+
+    return 0;
+}
 
 /* ---------------- System totals ------------------------------------------ */
 
@@ -118,11 +145,16 @@ static void print_system_totals(int fd_total)
 static void print_pid_to_power_single(int fd_power, __u32 pid)
 {
     __u64 power = 0;
+    char comm[256] = {0};
 
     printf("=== PID → power (EMA) (pid_to_power) [PID %u] ===\n", pid);
     if (bpf_map_lookup_elem(fd_power, &pid, &power) == 0) {
-        printf("%-8s %-18s\n", "PID", "power");
-        printf("%-8u %-18llu\n", pid, (unsigned long long)power);
+        get_comm_for_pid(pid, comm, sizeof(comm));
+        printf("%-8s %-16s %-18s\n", "PID", "COMM", "power");
+        printf("%-8u %-16s %-18llu\n",
+               pid,
+               (comm[0] ? comm : "?"),
+               (unsigned long long)power);
     } else {
         printf("  (no entry yet for PID %u)\n", pid);
     }
@@ -135,7 +167,7 @@ static void print_pid_to_power_all(int fd_power)
     if (comm_filter[0])
         printf(" [comm=\"%s\"]", comm_filter);
     printf(" ===\n");
-    printf("%-8s %-18s\n", "PID", "power");
+    printf("%-8s %-16s %-18s\n", "PID", "COMM", "power");
 
     __u32 prev_key = 0;
     __u32 cur_key;
@@ -167,8 +199,11 @@ static void print_pid_to_power_all(int fd_power)
 
         if (bpf_map_lookup_elem(fd_power, &pid, &power) == 0) {
             if (power != 0) {
-                printf("%-8u %-18llu\n",
+                char comm[256] = {0};
+                get_comm_for_pid(pid, comm, sizeof(comm));
+                printf("%-8u %-16s %-18llu\n",
                        pid,
+                       (comm[0] ? comm : "?"),
                        (unsigned long long)power);
             }
         }
@@ -184,11 +219,16 @@ static void print_pid_to_power_all(int fd_power)
 static void print_pid_to_consumption_single(int fd_consumption, __u32 pid)
 {
     __u64 energy = 0;
+    char comm[256] = {0};
 
     printf("=== PID → cumulative energy (pid_to_consumption) [PID %u] ===\n", pid);
     if (bpf_map_lookup_elem(fd_consumption, &pid, &energy) == 0) {
-        printf("%-8s %-18s\n", "PID", "energy");
-        printf("%-8u %-18llu\n", pid, (unsigned long long)energy);
+        get_comm_for_pid(pid, comm, sizeof(comm));
+        printf("%-8s %-16s %-18s\n", "PID", "COMM", "energy");
+        printf("%-8u %-16s %-18llu\n",
+               pid,
+               (comm[0] ? comm : "?"),
+               (unsigned long long)energy);
     } else {
         printf("  (no entry yet for PID %u)\n", pid);
     }
@@ -201,7 +241,7 @@ static void print_pid_to_consumption_all(int fd_consumption)
     if (comm_filter[0])
         printf(" [comm=\"%s\"]", comm_filter);
     printf(" ===\n");
-    printf("%-8s %-18s\n", "PID", "energy");
+    printf("%-8s %-16s %-18s\n", "PID", "COMM", "energy");
 
     __u32 prev_key = 0;
     __u32 cur_key;
@@ -232,8 +272,11 @@ static void print_pid_to_consumption_all(int fd_consumption)
         }
 
         if (bpf_map_lookup_elem(fd_consumption, &pid, &energy) == 0) {
-            printf("%-8u %-18llu\n",
+            char comm[256] = {0};
+            get_comm_for_pid(pid, comm, sizeof(comm));
+            printf("%-8u %-16s %-18llu\n",
                    pid,
+                   (comm[0] ? comm : "?"),
                    (unsigned long long)energy);
         }
 
@@ -248,11 +291,16 @@ static void print_pid_to_consumption_all(int fd_consumption)
 static void print_pid_to_run_start_single(int fd_run_start, __u32 pid)
 {
     __u64 start_time = 0;
+    char comm[256] = {0};
 
     printf("=== PID → run start time (pid_to_run_start) [PID %u] ===\n", pid);
     if (bpf_map_lookup_elem(fd_run_start, &pid, &start_time) == 0) {
-        printf("%-8s %-24s\n", "PID", "start_time_ns");
-        printf("%-8u %-24llu\n", pid, (unsigned long long)start_time);
+        get_comm_for_pid(pid, comm, sizeof(comm));
+        printf("%-8s %-16s %-24s\n", "PID", "COMM", "start_time_ns");
+        printf("%-8u %-16s %-24llu\n",
+               pid,
+               (comm[0] ? comm : "?"),
+               (unsigned long long)start_time);
     } else {
         printf("  (no entry yet for PID %u)\n", pid);
     }
@@ -265,7 +313,7 @@ static void print_pid_to_run_start_all(int fd_run_start)
     if (comm_filter[0])
         printf(" [comm=\"%s\"]", comm_filter);
     printf(" ===\n");
-    printf("%-8s %-24s\n", "PID", "start_time_ns");
+    printf("%-8s %-16s %-24s\n", "PID", "COMM", "start_time_ns");
 
     __u32 prev_key = 0;
     __u32 cur_key;
@@ -296,8 +344,11 @@ static void print_pid_to_run_start_all(int fd_run_start)
         }
 
         if (bpf_map_lookup_elem(fd_run_start, &pid, &start_time) == 0) {
-            printf("%-8u %-24llu\n",
+            char comm[256] = {0};
+            get_comm_for_pid(pid, comm, sizeof(comm));
+            printf("%-8u %-16s %-24llu\n",
                    pid,
+                   (comm[0] ? comm : "?"),
                    (unsigned long long)start_time);
         }
 
@@ -426,7 +477,7 @@ int main(int argc, char **argv)
     const char *run_start_path    = "/sys/fs/bpf/efs/pid_to_run_start";
     const char *cpu_prev_path     = "/sys/fs/bpf/efs/cpu_to_prev_energy";
 
-    int interval_ms = 1000;   // now explicitly milliseconds
+    int interval_ms = 1000;   // milliseconds
 
     if (argc > 1 && strcmp(argv[1], "-h") == 0) {
         usage(argv[0]);
@@ -454,7 +505,7 @@ int main(int argc, char **argv)
         if (strcmp(argv[argi], "-") == 0) {
             pid_filter = -1;
             comm_filter[0] = '\0';
-        } else if (strncmp(argv[argi], "comm=", 5) == 0) {  // NEW
+        } else if (strncmp(argv[argi], "comm=", 5) == 0) {
             pid_filter = -1;
             strncpy(comm_filter, argv[argi] + 5, sizeof(comm_filter) - 1);
             comm_filter[sizeof(comm_filter) - 1] = '\0';
@@ -560,7 +611,7 @@ int main(int argc, char **argv)
             print_cpu_to_prev_energy(fd_cpu_prev);
 
         fflush(stdout);
-        usleep(interval_ms * 1000);  // milliseconds → microseconds
+        usleep(interval_ms * 1000);  // ms → µs
     }
 
     close(fd_total);

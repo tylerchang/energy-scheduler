@@ -1,0 +1,4110 @@
+Polling energy-fair scheduler maps every 100 millisecond(s)...
+Filtering on comm "mem_miss"
+Maps shown: total power consumption 
+Press Ctrl+C to stop.
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 0.000019 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2573376213027 ns
+  energy:    88694841110000 (units of your kfunc)
+  uncore_energy:    973862676729470000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 0.131691 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2573411640831 ns
+  energy:    88696268580000 (units of your kfunc)
+  uncore_energy:    973862813847840000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 0.263133 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2573442379148 ns
+  energy:    88697562380000 (units of your kfunc)
+  uncore_energy:    973862884253260000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 0.394194 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2573472843252 ns
+  energy:    88698879820000 (units of your kfunc)
+  uncore_energy:    973863103469570000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 0.525618 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2573503341698 ns
+  energy:    88700176490000 (units of your kfunc)
+  uncore_energy:    973863278460280000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 0.656736 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2573533403431 ns
+  energy:    88701407560000 (units of your kfunc)
+  uncore_energy:    973863417422850000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 0.788401 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2573565308556 ns
+  energy:    88702734330000 (units of your kfunc)
+  uncore_energy:    973863591572150000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 0.919398 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2573600649588 ns
+  energy:    88704213080000 (units of your kfunc)
+  uncore_energy:    973863749286370000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 1.050903 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2573636342142 ns
+  energy:    88705694590000 (units of your kfunc)
+  uncore_energy:    973863966890090000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 1.182472 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2573681136674 ns
+  energy:    88707569580000 (units of your kfunc)
+  uncore_energy:    973864079961540000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 1.314114 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2573712209986 ns
+  energy:    88708886570000 (units of your kfunc)
+  uncore_energy:    973864243284290000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 1.445219 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2573746128832 ns
+  energy:    88710291410000 (units of your kfunc)
+  uncore_energy:    973864444912750000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 1.575977 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2573777439113 ns
+  energy:    88711599540000 (units of your kfunc)
+  uncore_energy:    973864579710420000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 1.707715 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2573810074673 ns
+  energy:    88712979070000 (units of your kfunc)
+  uncore_energy:    973864787497460000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 1.839274 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2574348172443 ns
+  energy:    88735563170000 (units of your kfunc)
+  uncore_energy:    973864995330990000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   42                
+189577   42                
+189580   43                
+189573   44                
+189574   38                
+189579   44                
+189575   38                
+189576   45                
+189578   34                
+189582   40                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   2680710000        
+189580   2630860000        
+189578   2742030000        
+189577   3000340000        
+189573   2836950000        
+189582   2907260000        
+189575   2883300000        
+189581   2897020000        
+189576   3139230000        
+189579   3104530000        
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 1.980352 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2575240028875 ns
+  energy:    88772991410000 (units of your kfunc)
+  uncore_energy:    973865173312600000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   34                
+189577   36                
+189580   40                
+189573   35                
+189574   39                
+189579   45                
+189575   53                
+189576   39                
+189578   34                
+189582   43                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   6325430000        
+189580   6528660000        
+189578   6508030000        
+189577   6632600000        
+189573   6449120000        
+189582   6514120000        
+189575   6486850000        
+189581   6515160000        
+189576   6815210000        
+189579   6553130000        
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 2.117797 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2576136986851 ns
+  energy:    88810168120000 (units of your kfunc)
+  uncore_energy:    973865345401640000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   48                
+189577   38                
+189580   41                
+189573   41                
+189574   38                
+189579   32                
+189575   37                
+189576   41                
+189578   39                
+189582   37                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   9731600000        
+189580   9769960000        
+189578   9931840000        
+189577   10066800000       
+189573   9690370000        
+189582   10057330000       
+189575   9832050000        
+189581   9863030000        
+189576   10215460000       
+189579   9824100000        
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 2.255922 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2577015915019 ns
+  energy:    88846152010000 (units of your kfunc)
+  uncore_energy:    973865520118890000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   36                
+189577   41                
+189580   37                
+189573   41                
+189574   43                
+189579   41                
+189575   41                
+189576   34                
+189578   36                
+189582   37                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   13033320000       
+189580   13158230000       
+189578   13208980000       
+189577   13317390000       
+189573   12965810000       
+189582   13439590000       
+189575   13203770000       
+189581   13354960000       
+189576   13592230000       
+189579   13216190000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 2.399948 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2577937851576 ns
+  energy:    88883502500000 (units of your kfunc)
+  uncore_energy:    973865701534270000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   31                
+189577   36                
+189580   37                
+189573   38                
+189574   37                
+189579   43                
+189575   38                
+189576   34                
+189578   46                
+189582   35                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   16282540000       
+189580   16647520000       
+189578   16655010000       
+189577   16711170000       
+189573   16377540000       
+189582   16837430000       
+189575   16493660000       
+189581   16752330000       
+189576   17099890000       
+189579   16812230000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 2.542347 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2578877922171 ns
+  energy:    88921970550000 (units of your kfunc)
+  uncore_energy:    973865880608490000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   39                
+189577   42                
+189580   38                
+189573   40                
+189574   35                
+189579   43                
+189575   42                
+189576   40                
+189578   35                
+189582   42                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   19807890000       
+189580   20129800000       
+189578   20048700000       
+189577   20120670000       
+189573   19894690000       
+189582   20432730000       
+189575   20234980000       
+189581   20427130000       
+189576   20543170000       
+189579   20233420000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 2.683493 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2579774229808 ns
+  energy:    88959415870000 (units of your kfunc)
+  uncore_energy:    973866056336080000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   41                
+189577   40                
+189580   39                
+189573   41                
+189574   38                
+189579   35                
+189575   38                
+189576   37                
+189578   34                
+189582   42                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   23192800000       
+189580   23533830000       
+189578   23530900000       
+189577   23500450000       
+189573   23419510000       
+189582   23866610000       
+189575   23543210000       
+189581   23811040000       
+189576   23997920000       
+189579   23752090000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 2.822838 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2580665360583 ns
+  energy:    88996679090000 (units of your kfunc)
+  uncore_energy:    973866229853500000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   42                
+189577   39                
+189580   37                
+189573   40                
+189574   42                
+189579   42                
+189575   38                
+189576   40                
+189578   38                
+189582   40                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   26502790000       
+189580   27024290000       
+189578   27053390000       
+189577   26938720000       
+189573   26725450000       
+189582   27229370000       
+189575   26899460000       
+189581   27116260000       
+189576   27274230000       
+189579   26990930000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 2.963333 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2581559831034 ns
+  energy:    89034033640000 (units of your kfunc)
+  uncore_energy:    973866406035170000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   43                
+189577   36                
+189580   39                
+189573   38                
+189574   44                
+189579   40                
+189575   41                
+189576   35                
+189578   37                
+189582   39                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   29844760000       
+189580   30582350000       
+189578   30432880000       
+189577   30535510000       
+189573   30200190000       
+189582   30751580000       
+189575   30267670000       
+189581   30358280000       
+189576   30517270000       
+189579   30389360000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 3.102356 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2582423085674 ns
+  energy:    89070501550000 (units of your kfunc)
+  uncore_energy:    973866580044250000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   39                
+189577   41                
+189580   41                
+189573   36                
+189574   46                
+189579   39                
+189575   34                
+189576   41                
+189578   41                
+189582   48                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   33266860000       
+189580   33887970000       
+189578   33802350000       
+189577   33895670000       
+189573   33516100000       
+189582   34123960000       
+189575   33576390000       
+189581   33427410000       
+189576   34135770000       
+189579   33510190000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 3.239635 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2583275907032 ns
+  energy:    89105952260000 (units of your kfunc)
+  uncore_energy:    973866757232700000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   45                
+189577   40                
+189580   40                
+189573   38                
+189574   43                
+189579   41                
+189575   40                
+189576   40                
+189578   38                
+189582   38                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   36531800000       
+189580   37363040000       
+189578   37038460000       
+189577   37096390000       
+189573   36862060000       
+189582   37415420000       
+189575   36750090000       
+189581   36886460000       
+189576   37410280000       
+189579   36956530000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 3.375553 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2584249765679 ns
+  energy:    89146102550000 (units of your kfunc)
+  uncore_energy:    973866926486710000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   43                
+189577   39                
+189580   40                
+189573   36                
+189574   40                
+189579   43                
+189575   42                
+189576   41                
+189578   38                
+189582   36                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   39883540000       
+189580   40768640000       
+189578   40442980000       
+189577   40511820000       
+189573   40112360000       
+189582   40856120000       
+189575   39916870000       
+189581   40075250000       
+189576   40703410000       
+189579   40478370000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 3.516353 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2585235044501 ns
+  energy:    89187090590000 (units of your kfunc)
+  uncore_energy:    973867103320630000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   33                
+189577   46                
+189580   40                
+189573   40                
+189574   39                
+189579   44                
+189575   42                
+189576   38                
+189578   39                
+189582   39                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   43370010000       
+189580   44186690000       
+189578   43900450000       
+189577   44223370000       
+189573   43591310000       
+189582   44203750000       
+189575   43299320000       
+189581   43443500000       
+189576   44099580000       
+189579   43863370000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 3.656950 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2586205002957 ns
+  energy:    89228000720000 (units of your kfunc)
+  uncore_energy:    973867284723580000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   42                
+189577   39                
+189580   40                
+189573   36                
+189574   42                
+189579   38                
+189575   39                
+189576   42                
+189578   35                
+189582   43                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   46681210000       
+189580   47746420000       
+189578   47255410000       
+189577   47726900000       
+189573   46959350000       
+189582   47934210000       
+189575   46889420000       
+189581   46911060000       
+189576   47677610000       
+189579   47487340000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 3.799178 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2587111214365 ns
+  energy:    89265765980000 (units of your kfunc)
+  uncore_energy:    973867462045450000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   42                
+189577   37                
+189580   43                
+189573   36                
+189574   42                
+189579   43                
+189575   37                
+189576   41                
+189578   38                
+189582   43                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   50128880000       
+189580   51113550000       
+189578   50713860000       
+189577   51132050000       
+189573   50333110000       
+189582   51270280000       
+189575   50104960000       
+189581   50227870000       
+189576   51110470000       
+189579   50829980000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 3.940211 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2588009937553 ns
+  energy:    89303220720000 (units of your kfunc)
+  uncore_energy:    973867638474070000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   45                
+189577   44                
+189580   35                
+189573   41                
+189574   40                
+189579   42                
+189575   38                
+189576   43                
+189578   34                
+189582   34                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   53568860000       
+189580   54615470000       
+189578   54065160000       
+189577   54618980000       
+189573   53904260000       
+189582   54759840000       
+189575   53568240000       
+189581   53810350000       
+189576   54699520000       
+189579   54259090000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 4.077668 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2588894521861 ns
+  energy:    89340412640000 (units of your kfunc)
+  uncore_energy:    973867809438120000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   44                
+189577   44                
+189580   42                
+189573   40                
+189574   40                
+189579   37                
+189575   44                
+189576   43                
+189578   43                
+189582   41                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   57113040000       
+189580   58110820000       
+189578   57465010000       
+189577   57778480000       
+189573   57154630000       
+189582   58217650000       
+189575   56927050000       
+189581   57221250000       
+189576   58080470000       
+189579   57816680000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 4.216878 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2589737669393 ns
+  energy:    89375312220000 (units of your kfunc)
+  uncore_energy:    973867983637670000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   34                
+189577   41                
+189580   39                
+189573   41                
+189574   38                
+189579   41                
+189575   39                
+189576   42                
+189578   38                
+189582   41                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   60359920000       
+189580   61403650000       
+189578   60763690000       
+189577   61115620000       
+189573   60306820000       
+189582   61560240000       
+189575   60140590000       
+189581   60530050000       
+189576   61381400000       
+189579   60981620000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 4.357770 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2590672365382 ns
+  energy:    89413957210000 (units of your kfunc)
+  uncore_energy:    973868159987490000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   36                
+189577   39                
+189580   42                
+189573   36                
+189574   40                
+189579   38                
+189575   39                
+189576   40                
+189578   43                
+189582   40                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   63887480000       
+189580   64870590000       
+189578   64290930000       
+189577   64697790000       
+189573   63828690000       
+189582   65148260000       
+189575   63608770000       
+189581   63936290000       
+189576   64683650000       
+189579   64495420000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 4.496214 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2591587155861 ns
+  energy:    89447105270000 (units of your kfunc)
+  uncore_energy:    973868336169570000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   18                
+189577   18                
+189580   18                
+189573   18                
+189574   23                
+189579   22                
+189575   28                
+189576   19                
+189578   19                
+189582   17                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   66651600000       
+189580   67357090000       
+189578   66857140000       
+189577   67098430000       
+189573   66619390000       
+189582   67390410000       
+189575   66467150000       
+189581   66610150000       
+189576   67164830000       
+189579   67222340000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 4.634410 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2592454772932 ns
+  energy:    89466504300000 (units of your kfunc)
+  uncore_energy:    973868518615020000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   20                
+189577   19                
+189580   19                
+189573   18                
+189574   18                
+189579   18                
+189575   18                
+189576   18                
+189578   18                
+189582   16                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   68287950000       
+189580   69044770000       
+189578   68447700000       
+189577   68735100000       
+189573   68203390000       
+189582   68951410000       
+189575   68115680000       
+189581   68386720000       
+189576   68889810000       
+189579   68819960000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 4.773711 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2593332720105 ns
+  energy:    89485729910000 (units of your kfunc)
+  uncore_energy:    973868701406770000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   21                
+189577   18                
+189580   18                
+189573   19                
+189574   19                
+189579   17                
+189575   18                
+189576   19                
+189578   21                
+189582   21                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   69869870000       
+189580   70580400000       
+189578   70019450000       
+189577   70354530000       
+189573   69846140000       
+189582   70525170000       
+189575   69669340000       
+189581   69954840000       
+189576   70443950000       
+189579   70525480000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 4.916717 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2594244603354 ns
+  energy:    89505996920000 (units of your kfunc)
+  uncore_energy:    973868889625180000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   18                
+189577   22                
+189580   21                
+189573   19                
+189574   20                
+189579   19                
+189575   20                
+189576   19                
+189578   19                
+189582   17                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   71561650000       
+189580   72324300000       
+189578   71668810000       
+189577   72016000000       
+189573   71475410000       
+189582   72145050000       
+189575   71332690000       
+189581   71633690000       
+189576   72123140000       
+189579   72165140000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 5.056053 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2595112841079 ns
+  energy:    89525349430000 (units of your kfunc)
+  uncore_energy:    973869073872210000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   19                
+189577   17                
+189580   19                
+189573   17                
+189574   16                
+189579   20                
+189575   19                
+189576   18                
+189578   19                
+189582   19                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   73179530000       
+189580   73879170000       
+189578   73261560000       
+189577   73527030000       
+189573   73006800000       
+189582   73789800000       
+189575   72933320000       
+189581   73307070000       
+189576   73643050000       
+189579   73784420000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 5.193977 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2595974502024 ns
+  energy:    89544459380000 (units of your kfunc)
+  uncore_energy:    973869254118040000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   17                
+189577   18                
+189580   21                
+189573   18                
+189574   18                
+189579   19                
+189575   18                
+189576   18                
+189578   20                
+189582   19                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   74703480000       
+189580   75531510000       
+189578   74917760000       
+189577   75214560000       
+189573   74648770000       
+189582   75432880000       
+189575   74525370000       
+189581   74925750000       
+189576   75347900000       
+189579   75481770000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 5.335875 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2596872228891 ns
+  energy:    89564592600000 (units of your kfunc)
+  uncore_energy:    973869438398880000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   21                
+189577   20                
+189580   24                
+189573   18                
+189574   20                
+189579   20                
+189575   20                
+189576   18                
+189578   19                
+189582   18                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   76461590000       
+189580   77368350000       
+189578   76625350000       
+189577   76945200000       
+189573   76407850000       
+189582   77248080000       
+189575   76287340000       
+189581   76686310000       
+189576   77049820000       
+189579   77243820000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 5.473949 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2597797686859 ns
+  energy:    89585175730000 (units of your kfunc)
+  uncore_energy:    973869619723860000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   19                
+189577   20                
+189580   16                
+189573   21                
+189574   16                
+189579   18                
+189575   18                
+189576   21                
+189578   18                
+189582   20                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   78068620000       
+189580   79108490000       
+189578   78234440000       
+189577   78575980000       
+189573   77942710000       
+189582   78927470000       
+189575   77990390000       
+189581   78319800000       
+189576   78659170000       
+189579   78948960000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 5.609860 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2598657308432 ns
+  energy:    89604095900000 (units of your kfunc)
+  uncore_energy:    973869796617900000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   19                
+189577   17                
+189580   18                
+189573   17                
+189574   19                
+189579   19                
+189575   21                
+189576   17                
+189578   18                
+189582   19                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   79747690000       
+189580   80617610000       
+189578   79838580000       
+189577   80232000000       
+189573   79452830000       
+189582   80508750000       
+189575   79608000000       
+189581   79951440000       
+189576   80282520000       
+189579   80519130000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 5.749237 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2599524400804 ns
+  energy:    89623449740000 (units of your kfunc)
+  uncore_energy:    973869979522820000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   19                
+189577   19                
+189580   20                
+189573   18                
+189574   19                
+189579   28                
+189575   19                
+189576   20                
+189578   19                
+189582   20                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   81427740000       
+189580   82143480000       
+189578   81409370000       
+189577   81884220000       
+189573   81036250000       
+189582   82200970000       
+189575   81210190000       
+189581   81643720000       
+189576   82013760000       
+189579   82155310000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 5.887574 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2600397887075 ns
+  energy:    89643059650000 (units of your kfunc)
+  uncore_energy:    973870160738560000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   17                
+189577   21                
+189580   19                
+189573   17                
+189574   17                
+189579   20                
+189575   18                
+189576   20                
+189578   18                
+189582   18                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   83082820000       
+189580   83710670000       
+189578   83026200000       
+189577   83496160000       
+189573   82696970000       
+189582   83789550000       
+189575   82819830000       
+189581   83124140000       
+189576   83668270000       
+189579   83755530000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 6.027873 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2601287510468 ns
+  energy:    89663057660000 (units of your kfunc)
+  uncore_energy:    973870342261090000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   27                
+189577   26                
+189580   31                
+189573   30                
+189574   21                
+189579   42                
+189575   58                
+189576   23                
+189578   29                
+189582   25                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   84905430000       
+189580   85623510000       
+189578   84913370000       
+189577   85232250000       
+189573   84653390000       
+189582   85738070000       
+189575   84725370000       
+189581   85028120000       
+189576   85489230000       
+189579   85600330000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 6.171779 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2602254932216 ns
+  energy:    89687623100000 (units of your kfunc)
+  uncore_energy:    973870532667120000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   20                
+189577   18                
+189580   19                
+189573   18                
+189574   19                
+189579   18                
+189575   20                
+189576   19                
+189578   20                
+189582   18                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   86545610000       
+189580   87305980000       
+189578   86507450000       
+189577   86891900000       
+189573   86241670000       
+189582   87250800000       
+189575   86329070000       
+189581   86707780000       
+189576   87185420000       
+189579   87238360000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 6.312577 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2603202629271 ns
+  energy:    89710472440000 (units of your kfunc)
+  uncore_energy:    973870716728640000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   20                
+189577   22                
+189580   21                
+189573   20                
+189574   18                
+189579   17                
+189575   19                
+189576   19                
+189578   19                
+189582   19                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   88187040000       
+189580   88979260000       
+189578   88162210000       
+189577   88552970000       
+189573   87931120000       
+189582   88863220000       
+189575   88019610000       
+189581   88399760000       
+189576   88740470000       
+189579   88829970000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 6.449913 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2604149787129 ns
+  energy:    89732893780000 (units of your kfunc)
+  uncore_energy:    973870895464670000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   17                
+189577   19                
+189580   17                
+189573   18                
+189574   19                
+189579   18                
+189575   20                
+189576   19                
+189578   19                
+189582   18                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   89795830000       
+189580   90622630000       
+189578   89778760000       
+189577   90244950000       
+189573   89629280000       
+189582   90580480000       
+189575   89808520000       
+189581   90161610000       
+189576   90522270000       
+189579   90548860000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 6.594505 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2605096778968 ns
+  energy:    89755435020000 (units of your kfunc)
+  uncore_energy:    973871088841860000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   19                
+189577   18                
+189580   17                
+189573   18                
+189574   18                
+189579   20                
+189575   19                
+189576   20                
+189578   19                
+189582   20                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   91638500000       
+189580   92489960000       
+189578   91716150000       
+189577   91975460000       
+189573   91437340000       
+189582   92240030000       
+189575   91544500000       
+189581   91813530000       
+189576   92136070000       
+189579   92225610000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 6.733377 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2605990107947 ns
+  energy:    89774886780000 (units of your kfunc)
+  uncore_energy:    973871269096980000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   19                
+189577   17                
+189580   18                
+189573   19                
+189574   17                
+189579   18                
+189575   17                
+189576   17                
+189578   17                
+189582   19                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   93275250000       
+189580   94108300000       
+189578   93235380000       
+189577   93573280000       
+189573   93050490000       
+189582   93904620000       
+189575   93185450000       
+189581   93481940000       
+189576   93800100000       
+189579   93806410000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 6.872302 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2606877581767 ns
+  energy:    89794584890000 (units of your kfunc)
+  uncore_energy:    973871449737310000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   22                
+189577   18                
+189580   25                
+189573   19                
+189574   20                
+189579   18                
+189575   19                
+189576   20                
+189578   18                
+189582   22                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   94945850000       
+189580   95726310000       
+189578   94917750000       
+189577   95172000000       
+189573   94663640000       
+189582   95465620000       
+189575   94821310000       
+189581   95143810000       
+189576   95417230000       
+189579   95533440000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 7.011647 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2607745597040 ns
+  energy:    89814289130000 (units of your kfunc)
+  uncore_energy:    973871631019250000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   34                
+189577   20                
+189580   19                
+189573   19                
+189574   30                
+189579   18                
+189575   19                
+189576   18                
+189578   24                
+189582   19                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   96514760000       
+189580   97319190000       
+189578   96561160000       
+189577   96807290000       
+189573   96386380000       
+189582   97092450000       
+189575   96394210000       
+189581   96858030000       
+189576   97046210000       
+189579   97109710000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 7.149701 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2608583717323 ns
+  energy:    89833395230000 (units of your kfunc)
+  uncore_energy:    973871812305450000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   21                
+189577   21                
+189580   19                
+189573   20                
+189574   20                
+189579   19                
+189575   21                
+189576   18                
+189578   20                
+189582   18                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   98167870000       
+189580   98914210000       
+189578   98157690000       
+189577   98367530000       
+189573   97938020000       
+189582   98581600000       
+189575   98009950000       
+189581   98475310000       
+189576   98670440000       
+189579   98761020000       
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 7.287610 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2609424842500 ns
+  energy:    89851983300000 (units of your kfunc)
+  uncore_energy:    973871993684420000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   17                
+189577   19                
+189580   18                
+189573   18                
+189574   19                
+189579   18                
+189575   17                
+189576   20                
+189578   17                
+189582   20                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   99789700000       
+189580   100465570000      
+189578   99686140000       
+189577   99911430000       
+189573   99426040000       
+189582   100120740000      
+189575   99624280000       
+189581   100003970000      
+189576   100328110000      
+189579   100447930000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 7.427064 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2610308929509 ns
+  energy:    89871570140000 (units of your kfunc)
+  uncore_energy:    973872177481670000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   19                
+189577   18                
+189580   17                
+189573   17                
+189574   17                
+189579   19                
+189575   19                
+189576   19                
+189578   16                
+189582   19                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   101378140000      
+189580   102118250000      
+189578   101241050000      
+189577   101583170000      
+189573   101001160000      
+189582   101709790000      
+189575   101153160000      
+189581   101561080000      
+189576   101915820000      
+189579   102040720000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 7.564293 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2611183429697 ns
+  energy:    89891130960000 (units of your kfunc)
+  uncore_energy:    973872356443190000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   18                
+189577   18                
+189580   20                
+189573   18                
+189574   18                
+189579   21                
+189575   18                
+189576   20                
+189578   18                
+189582   18                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   102961080000      
+189580   103650200000      
+189578   102835210000      
+189577   103123800000      
+189573   102591860000      
+189582   103445340000      
+189575   102809650000      
+189581   103252560000      
+189576   103727030000      
+189579   103732300000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 7.703898 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2612069776943 ns
+  energy:    89911264740000 (units of your kfunc)
+  uncore_energy:    973872538582210000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   19                
+189577   20                
+189580   19                
+189573   18                
+189574   19                
+189579   18                
+189575   18                
+189576   18                
+189578   18                
+189582   19                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   104663940000      
+189580   105270380000      
+189578   104417880000      
+189577   104794820000      
+189573   104330650000      
+189582   105058680000      
+189575   104420550000      
+189581   104887810000      
+189576   105445900000      
+189579   105499990000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 7.843959 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2612962313467 ns
+  energy:    89931850140000 (units of your kfunc)
+  uncore_energy:    973872722573990000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   18                
+189577   19                
+189580   18                
+189573   18                
+189574   20                
+189579   19                
+189575   18                
+189576   21                
+189578   19                
+189582   20                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   106506630000      
+189580   106912530000      
+189578   106101830000      
+189577   106499170000      
+189573   105977990000      
+189582   106845440000      
+189575   106152110000      
+189581   106566310000      
+189576   107247830000      
+189579   107245790000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 7.983767 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2613839836469 ns
+  energy:    89951384620000 (units of your kfunc)
+  uncore_energy:    973872904204520000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   18                
+189577   21                
+189580   19                
+189573   18                
+189574   18                
+189579   19                
+189575   18                
+189576   20                
+189578   18                
+189582   24                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   108109850000      
+189580   108567670000      
+189578   107658990000      
+189577   108019420000      
+189573   107644550000      
+189582   108447450000      
+189575   107773330000      
+189581   108107720000      
+189576   108923990000      
+189579   108827510000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 8.120394 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2614705514664 ns
+  energy:    89970960560000 (units of your kfunc)
+  uncore_energy:    973873083378880000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   20                
+189577   19                
+189580   21                
+189573   19                
+189574   19                
+189579   18                
+189575   19                
+189576   18                
+189578   20                
+189582   18                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   109666840000      
+189580   110083650000      
+189578   109298950000      
+189577   109711690000      
+189573   109224770000      
+189582   110179640000      
+189575   109508410000      
+189581   109677900000      
+189576   110671760000      
+189579   110367780000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 8.260711 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2615588817252 ns
+  energy:    89990748520000 (units of your kfunc)
+  uncore_energy:    973873266464300000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   19                
+189577   19                
+189580   19                
+189573   17                
+189574   19                
+189579   17                
+189575   18                
+189576   21                
+189578   18                
+189582   20                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   111259550000      
+189580   111735210000      
+189578   110879170000      
+189577   111271580000      
+189573   110826760000      
+189582   111881770000      
+189575   111061030000      
+189581   111268770000      
+189576   112319730000      
+189579   111963880000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 8.396967 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2616452889977 ns
+  energy:    90010100390000 (units of your kfunc)
+  uncore_energy:    973873445808420000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   18                
+189577   20                
+189580   19                
+189573   20                
+189574   19                
+189579   20                
+189575   20                
+189576   21                
+189578   19                
+189582   20                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   112928180000      
+189580   113413800000      
+189578   112506690000      
+189577   113011200000      
+189573   112484750000      
+189582   113571440000      
+189575   112724740000      
+189581   112884950000      
+189576   113965380000      
+189579   113617780000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 8.534880 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2617341817925 ns
+  energy:    90030282910000 (units of your kfunc)
+  uncore_energy:    973873625138990000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   21                
+189577   20                
+189580   19                
+189573   19                
+189574   18                
+189579   18                
+189575   18                
+189576   18                
+189578   21                
+189582   23                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   114683370000      
+189580   115008040000      
+189578   114136560000      
+189577   114671810000      
+189573   114143380000      
+189582   115373080000      
+189575   114279810000      
+189581   114516860000      
+189576   115640490000      
+189579   115199170000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 8.671945 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2618221015506 ns
+  energy:    90050424880000 (units of your kfunc)
+  uncore_energy:    973873805777350000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   19                
+189577   18                
+189580   20                
+189573   21                
+189574   18                
+189579   19                
+189575   19                
+189576   20                
+189578   20                
+189582   18                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   116304920000      
+189580   116673370000      
+189578   115896990000      
+189577   116307810000      
+189573   115845010000      
+189582   117047920000      
+189575   116028950000      
+189581   116245420000      
+189576   117309350000      
+189579   116979720000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 8.815617 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2619113844111 ns
+  energy:    90070807720000 (units of your kfunc)
+  uncore_energy:    973873993520430000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   19                
+189577   18                
+189580   18                
+189573   21                
+189574   19                
+189579   18                
+189575   17                
+189576   17                
+189578   17                
+189582   17                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   118004740000      
+189580   118398840000      
+189578   117574730000      
+189577   117927080000      
+189573   117583410000      
+189582   118685980000      
+189575   117662590000      
+189581   118007510000      
+189576   118906000000      
+189579   118676360000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 8.958330 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2620012925531 ns
+  energy:    90092851510000 (units of your kfunc)
+  uncore_energy:    973874184289450000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   19                
+189577   24                
+189580   20                
+189573   22                
+189574   19                
+189579   21                
+189575   22                
+189576   18                
+189578   18                
+189582   16                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   119863810000      
+189580   120217090000      
+189578   119573450000      
+189577   119807070000      
+189573   119481210000      
+189582   120526190000      
+189575   119463400000      
+189581   119852790000      
+189576   120760700000      
+189579   120559920000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 9.098925 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2620959046027 ns
+  energy:    90115825100000 (units of your kfunc)
+  uncore_energy:    973874366749970000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   19                
+189577   18                
+189580   19                
+189573   20                
+189574   20                
+189579   20                
+189575   19                
+189576   21                
+189578   18                
+189582   19                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   121414880000      
+189580   121946840000      
+189578   121165560000      
+189577   121419800000      
+189573   121136010000      
+189582   122040880000      
+189575   121128870000      
+189581   121467350000      
+189576   122321850000      
+189579   122145040000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 9.240793 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2621924159571 ns
+  energy:    90139128400000 (units of your kfunc)
+  uncore_energy:    973874552415780000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   20                
+189577   18                
+189580   18                
+189573   19                
+189574   18                
+189579   18                
+189575   17                
+189576   19                
+189578   18                
+189582   17                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   123087060000      
+189580   123615210000      
+189578   122767270000      
+189577   123128930000      
+189573   122838260000      
+189582   123683050000      
+189575   122715670000      
+189581   123104100000      
+189576   123995110000      
+189579   123779390000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 9.380220 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2622871483202 ns
+  energy:    90162262610000 (units of your kfunc)
+  uncore_energy:    973874737630270000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   28                
+189577   25                
+189580   31                
+189573   23                
+189574   19                
+189579   19                
+189575   21                
+189576   22                
+189578   22                
+189582   21                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   124946520000      
+189580   125504030000      
+189578   124634180000      
+189577   125031990000      
+189573   124693010000      
+189582   125524910000      
+189575   124590610000      
+189581   124983890000      
+189576   125869990000      
+189579   125584000000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 9.524261 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2623824831946 ns
+  energy:    90184675570000 (units of your kfunc)
+  uncore_energy:    973874929012470000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   18                
+189577   19                
+189580   18                
+189573   18                
+189574   19                
+189579   17                
+189575   19                
+189576   20                
+189578   20                
+189582   19                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   126744670000      
+189580   127156370000      
+189578   126284970000      
+189577   126812840000      
+189573   126400340000      
+189582   127410010000      
+189575   126362610000      
+189581   126668580000      
+189576   127574870000      
+189579   127221970000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 9.662720 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2624723015311 ns
+  energy:    90205252080000 (units of your kfunc)
+  uncore_energy:    973875109342180000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   18                
+189577   18                
+189580   18                
+189573   21                
+189574   18                
+189579   19                
+189575   18                
+189576   19                
+189578   23                
+189582   19                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   128349520000      
+189580   128837810000      
+189578   127937660000      
+189577   128565320000      
+189573   128081530000      
+189582   129082230000      
+189575   128040450000      
+189581   128306470000      
+189576   129225110000      
+189579   128954150000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 9.802471 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2625605448768 ns
+  energy:    90225521920000 (units of your kfunc)
+  uncore_energy:    973875292943040000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   18                
+189577   18                
+189580   19                
+189573   18                
+189574   19                
+189579   19                
+189575   20                
+189576   21                
+189578   18                
+189582   23                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   129972370000      
+189580   130589520000      
+189578   129657200000      
+189577   130246290000      
+189573   129736010000      
+189582   130725680000      
+189575   129744300000      
+189581   129903780000      
+189576   130989180000      
+189579   130673220000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 9.939842 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2626471912089 ns
+  energy:    90245323070000 (units of your kfunc)
+  uncore_energy:    973875473092760000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   17                
+189577   18                
+189580   17                
+189573   18                
+189574   17                
+189579   19                
+189575   18                
+189576   20                
+189578   20                
+189582   18                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   131645320000      
+189580   132240370000      
+189578   131337590000      
+189577   131868140000      
+189573   131382450000      
+189582   132353940000      
+189575   131469040000      
+189581   131557710000      
+189576   132801290000      
+189579   132365170000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 10.079787 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2627360503063 ns
+  energy:    90265576450000 (units of your kfunc)
+  uncore_energy:    973875657149990000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   20                
+189577   19                
+189580   23                
+189573   21                
+189574   18                
+189579   20                
+189575   19                
+189576   20                
+189578   19                
+189582   20                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   133363720000      
+189580   133890910000      
+189578   132828970000      
+189577   133533490000      
+189573   133088770000      
+189582   134030310000      
+189575   133069380000      
+189581   133198560000      
+189576   134361670000      
+189579   134038490000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 10.217773 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2628228521997 ns
+  energy:    90285225350000 (units of your kfunc)
+  uncore_energy:    973875838372060000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   18                
+189577   20                
+189580   21                
+189573   18                
+189574   18                
+189579   16                
+189575   18                
+189576   19                
+189578   18                
+189582   20                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   135040040000      
+189580   135517370000      
+189578   134495670000      
+189577   135176250000      
+189573   134770130000      
+189582   135684880000      
+189575   134723430000      
+189581   134902480000      
+189576   135970680000      
+189579   135738650000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 10.358451 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2629106115115 ns
+  energy:    90304813450000 (units of your kfunc)
+  uncore_energy:    973876023729640000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   17                
+189577   23                
+189580   20                
+189573   20                
+189574   20                
+189579   19                
+189575   18                
+189576   18                
+189578   18                
+189582   18                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   136602480000      
+189580   137176140000      
+189578   136107150000      
+189577   136784880000      
+189573   136427100000      
+189582   137292150000      
+189575   136402400000      
+189581   136649330000      
+189576   137607790000      
+189579   137375620000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 10.498839 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2630023143067 ns
+  energy:    90325903890000 (units of your kfunc)
+  uncore_energy:    973876206990090000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   20                
+189577   19                
+189580   18                
+189573   21                
+189574   18                
+189579   21                
+189575   21                
+189576   20                
+189578   19                
+189582   19                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   138400120000      
+189580   138945880000      
+189578   137766770000      
+189577   138540360000      
+189573   138244600000      
+189582   139067900000      
+189575   138149670000      
+189581   138422400000      
+189576   139370140000      
+189579   139054370000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 10.639762 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2630908890857 ns
+  energy:    90345696840000 (units of your kfunc)
+  uncore_energy:    973876392253590000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   19                
+189577   18                
+189580   20                
+189573   19                
+189574   17                
+189579   19                
+189575   17                
+189576   20                
+189578   22                
+189582   17                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   140042460000      
+189580   140630620000      
+189578   139501670000      
+189577   140122960000      
+189573   139932140000      
+189582   140759990000      
+189575   139719700000      
+189581   140061140000      
+189576   140962800000      
+189579   140746470000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 10.780360 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2631782302351 ns
+  energy:    90365370420000 (units of your kfunc)
+  uncore_energy:    973876576976680000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   19                
+189577   18                
+189580   18                
+189573   19                
+189574   19                
+189579   19                
+189575   19                
+189576   19                
+189578   18                
+189582   19                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   141720310000      
+189580   142274170000      
+189578   141146430000      
+189577   141777020000      
+189573   141470330000      
+189582   142339270000      
+189575   141351940000      
+189581   141755930000      
+189576   142577400000      
+189579   142303310000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 10.920386 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2632651834045 ns
+  energy:    90385003980000 (units of your kfunc)
+  uncore_energy:    973876760854630000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   21                
+189577   18                
+189580   22                
+189573   18                
+189574   16                
+189579   18                
+189575   19                
+189576   19                
+189578   18                
+189582   20                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   143337460000      
+189580   143904550000      
+189578   142699790000      
+189577   143365550000      
+189573   143075520000      
+189582   143967870000      
+189575   142956390000      
+189581   143390910000      
+189576   144108010000      
+189579   143858330000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 11.059595 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2633506960564 ns
+  energy:    90404843050000 (units of your kfunc)
+  uncore_energy:    973876942815180000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   22                
+189577   19                
+189580   20                
+189573   19                
+189574   28                
+189579   22                
+189575   20                
+189576   32                
+189578   19                
+189582   42                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   145106400000      
+189580   145566680000      
+189578   144398080000      
+189577   145099560000      
+189573   144689750000      
+189582   145678110000      
+189575   144647520000      
+189581   145159570000      
+189576   145842400000      
+189579   145648950000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 11.198851 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2634359005028 ns
+  energy:    90424609010000 (units of your kfunc)
+  uncore_energy:    973877125255490000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   18                
+189577   18                
+189580   18                
+189573   19                
+189574   21                
+189579   19                
+189575   19                
+189576   20                
+189578   18                
+189582   17                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   146690970000      
+189580   147182020000      
+189578   146028760000      
+189577   146634310000      
+189573   146394420000      
+189582   147194180000      
+189575   146248190000      
+189581   146811770000      
+189576   147408110000      
+189579   147251330000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 11.336752 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2635134131326 ns
+  energy:    90442872710000 (units of your kfunc)
+  uncore_energy:    973877308086300000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   20                
+189577   21                
+189580   19                
+189573   21                
+189574   20                
+189579   18                
+189575   19                
+189576   19                
+189578   19                
+189582   19                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   147995210000      
+189580   148608720000      
+189578   147391640000      
+189577   147991420000      
+189573   147778670000      
+189582   148674010000      
+189575   147671890000      
+189581   148362940000      
+189576   148900250000      
+189579   148682570000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 11.478436 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2635855850411 ns
+  energy:    90460389860000 (units of your kfunc)
+  uncore_energy:    973877498224030000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   17                
+189577   18                
+189580   18                
+189573   21                
+189574   20                
+189579   20                
+189575   20                
+189576   20                
+189578   21                
+189582   19                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   149271520000      
+189580   149902500000      
+189578   148873170000      
+189577   149456620000      
+189573   149266560000      
+189582   150002250000      
+189575   148978070000      
+189581   149797700000      
+189576   150104490000      
+189579   149924770000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 11.615958 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2636400528908 ns
+  energy:    90474268830000 (units of your kfunc)
+  uncore_energy:    973877686556060000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   19                
+189577   17                
+189580   19                
+189573   20                
+189574   19                
+189579   16                
+189575   18                
+189576   20                
+189578   18                
+189582   20                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   150273070000      
+189580   150849000000      
+189578   149799670000      
+189577   150399970000      
+189573   150154190000      
+189582   150964330000      
+189575   149829630000      
+189581   150666250000      
+189576   150868960000      
+189579   150786160000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 11.754820 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2636709478307 ns
+  energy:    90483036050000 (units of your kfunc)
+  uncore_energy:    973877879372850000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   19                
+189577   18                
+189580   23                
+189573   19                
+189574   26                
+189579   19                
+189575   21                
+189576   23                
+189578   30                
+189582   27                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   150882180000      
+189580   151544640000      
+189578   150597110000      
+189577   151079420000      
+189573   150983350000      
+189582   151616150000      
+189575   150480580000      
+189581   151270210000      
+189576   151509080000      
+189579   151497690000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 11.902663 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2637030511633 ns
+  energy:    90494163500000 (units of your kfunc)
+  uncore_energy:    973878090605320000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   25                
+189577   21                
+189580   18                
+189573   17                
+189574   30                
+189579   19                
+189575   18                
+189576   19                
+189578   20                
+189582   18                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   151200950000      
+189580   151943030000      
+189578   150908690000      
+189577   151425200000      
+189573   151324080000      
+189582   152034820000      
+189575   150811980000      
+189581   151680230000      
+189576   151698750000      
+189579   151698950000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 12.041342 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2637203658572 ns
+  energy:    90500206820000 (units of your kfunc)
+  uncore_energy:    973878289224630000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   18                
+189577   22                
+189580   19                
+189573   20                
+189574   17                
+189579   20                
+189575   27                
+189576   18                
+189578   28                
+189582   19                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   151413660000      
+189580   152144430000      
+189578   151200150000      
+189577   151703990000      
+189573   151560140000      
+189582   152435060000      
+189575   151059950000      
+189581   151973190000      
+189576   152005140000      
+189579   152002600000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 12.183457 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2637375785054 ns
+  energy:    90506152100000 (units of your kfunc)
+  uncore_energy:    973878492315450000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   21                
+189577   18                
+189580   19                
+189573   26                
+189574   28                
+189579   24                
+189575   23                
+189576   18                
+189578   18                
+189582   23                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   151657790000      
+189580   152389820000      
+189578   151393170000      
+189577   151951640000      
+189573   151934100000      
+189582   152779620000      
+189575   151428880000      
+189581   152196580000      
+189576   152275060000      
+189579   152396720000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 12.327517 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2637580057436 ns
+  energy:    90513204870000 (units of your kfunc)
+  uncore_energy:    973878700990380000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   19                
+189577   19                
+189580   18                
+189573   18                
+189574   30                
+189579   18                
+189575   20                
+189576   25                
+189578   24                
+189582   24                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   152099050000      
+189580   152712240000      
+189578   151790980000      
+189577   152380680000      
+189573   152322740000      
+189582   153121870000      
+189575   151806230000      
+189581   152600920000      
+189576   152630440000      
+189579   152855080000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 12.467106 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2637814030458 ns
+  energy:    90520714260000 (units of your kfunc)
+  uncore_energy:    973878896664890000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   30                
+189577   20                
+189580   22                
+189573   17                
+189574   17                
+189579   21                
+189575   22                
+189576   17                
+189578   18                
+189582   31                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   152504180000      
+189580   153144700000      
+189578   152061960000      
+189577   152844400000      
+189573   152787050000      
+189582   153523790000      
+189575   152322440000      
+189581   153200430000      
+189576   153111070000      
+189579   153383330000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 12.603819 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2638082727867 ns
+  energy:    90528641620000 (units of your kfunc)
+  uncore_energy:    973879086639440000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   21                
+189577   19                
+189580   17                
+189573   36                
+189574   17                
+189579   23                
+189575   17                
+189576   19                
+189578   18                
+189582   16                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   153085660000      
+189580   153658020000      
+189578   152613410000      
+189577   153222960000      
+189573   153438650000      
+189582   153933760000      
+189575   152834370000      
+189581   153824370000      
+189576   153678990000      
+189579   153784820000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 12.742620 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2638414361285 ns
+  energy:    90538298470000 (units of your kfunc)
+  uncore_energy:    973879279549880000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   18                
+189577   33                
+189580   17                
+189573   23                
+189574   18                
+189579   21                
+189575   18                
+189576   18                
+189578   31                
+189582   18                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   153677100000      
+189580   154390620000      
+189578   153274260000      
+189577   153901660000      
+189573   154039350000      
+189582   154663460000      
+189575   153432850000      
+189581   154672450000      
+189576   154329810000      
+189579   154479540000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 12.882553 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2638831748129 ns
+  energy:    90549691310000 (units of your kfunc)
+  uncore_energy:    973879471817320000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   17                
+189577   30                
+189580   20                
+189573   18                
+189574   31                
+189579   19                
+189575   18                
+189576   20                
+189578   29                
+189582   20                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   154389850000      
+189580   155278360000      
+189578   154161220000      
+189577   154698350000      
+189573   154784310000      
+189582   155313630000      
+189575   154287800000      
+189581   155332680000      
+189576   155218110000      
+189579   155282650000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 13.020860 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2639190271530 ns
+  energy:    90559896580000 (units of your kfunc)
+  uncore_energy:    973879662186850000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   18                
+189577   25                
+189580   18                
+189573   29                
+189574   17                
+189579   18                
+189575   13                
+189576   20                
+189578   29                
+189582   17                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   155066730000      
+189580   155991440000      
+189578   154957170000      
+189577   155457330000      
+189573   155544960000      
+189582   155982430000      
+189575   154957010000      
+189581   155947160000      
+189576   155951890000      
+189579   156078240000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 13.166381 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2639640820101 ns
+  energy:    90572012130000 (units of your kfunc)
+  uncore_energy:    973879861797070000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   17                
+189577   17                
+189580   29                
+189573   17                
+189574   23                
+189579   17                
+189575   18                
+189576   18                
+189578   16                
+189582   17                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   156172140000      
+189580   156867500000      
+189578   155722740000      
+189577   156259960000      
+189573   156392400000      
+189582   156775440000      
+189575   155698250000      
+189581   156619150000      
+189576   156679250000      
+189579   156971200000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 13.305627 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2640061955434 ns
+  energy:    90583729270000 (units of your kfunc)
+  uncore_energy:    973880051703160000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   19                
+189577   18                
+189580   23                
+189573   19                
+189574   18                
+189579   17                
+189575   18                
+189576   19                
+189578   21                
+189582   25                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   157121700000      
+189580   157631700000      
+189578   156528410000      
+189577   156906340000      
+189573   157168650000      
+189582   157459950000      
+189575   156456140000      
+189581   157281050000      
+189576   157540290000      
+189579   157674930000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 13.443570 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2640470229483 ns
+  energy:    90596209190000 (units of your kfunc)
+  uncore_energy:    973880239833130000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   17                
+189577   18                
+189580   17                
+189573   23                
+189574   19                
+189579   17                
+189575   23                
+189576   24                
+189578   21                
+189582   20                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   157757840000      
+189580   158247550000      
+189578   157091780000      
+189577   157505220000      
+189573   157774700000      
+189582   158033520000      
+189575   157195880000      
+189581   158097590000      
+189576   158025050000      
+189579   158221500000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 13.581382 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2640895547855 ns
+  energy:    90608973830000 (units of your kfunc)
+  uncore_energy:    973880427696850000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   17                
+189577   18                
+189580   27                
+189573   18                
+189574   21                
+189579   18                
+189575   18                
+189576   34                
+189578   18                
+189582   17                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   158350800000      
+189580   158829320000      
+189578   157768370000      
+189577   158103200000      
+189573   158484690000      
+189582   158694010000      
+189575   157826520000      
+189581   158699120000      
+189576   158704980000      
+189579   159100130000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 13.720301 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2641291340395 ns
+  energy:    90620960740000 (units of your kfunc)
+  uncore_energy:    973880617604780000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   30                
+189577   20                
+189580   18                
+189573   14                
+189574   24                
+189579   16                
+189575   18                
+189576   18                
+189578   20                
+189582   19                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   158828560000      
+189580   159363840000      
+189578   158519290000      
+189577   158718110000      
+189573   159071840000      
+189582   159450370000      
+189575   158449080000      
+189581   159335120000      
+189576   159233390000      
+189579   159855150000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 13.864563 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2641781226986 ns
+  energy:    90636090020000 (units of your kfunc)
+  uncore_energy:    973880818764250000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   25                
+189577   23                
+189580   18                
+189573   29                
+189574   17                
+189579   19                
+189575   18                
+189576   20                
+189578   25                
+189582   35                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   159628250000      
+189580   160309460000      
+189578   159229760000      
+189577   159690390000      
+189573   160037870000      
+189582   160252080000      
+189575   159122170000      
+189581   160237810000      
+189576   160085300000      
+189579   160707960000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 14.005554 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2642300544409 ns
+  energy:    90651265940000 (units of your kfunc)
+  uncore_energy:    973881010569690000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   18                
+189577   18                
+189580   29                
+189573   26                
+189574   20                
+189579   18                
+189575   23                
+189576   21                
+189578   23                
+189582   20                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   160438990000      
+189580   161169700000      
+189578   160113370000      
+189577   160402660000      
+189573   161010200000      
+189582   161073330000      
+189575   159943230000      
+189581   160977860000      
+189576   160871150000      
+189579   161466000000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 14.142395 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2642747433000 ns
+  energy:    90665062980000 (units of your kfunc)
+  uncore_energy:    973881197811310000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   23                
+189577   14                
+189580   21                
+189573   24                
+189574   18                
+189579   20                
+189575   21                
+189576   23                
+189578   18                
+189582   26                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   161326720000      
+189580   161865640000      
+189578   160781410000      
+189577   161013950000      
+189573   161855810000      
+189582   161807900000      
+189575   160581190000      
+189581   161816330000      
+189576   161743210000      
+189579   162233500000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 14.284691 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2643212844087 ns
+  energy:    90679793510000 (units of your kfunc)
+  uncore_energy:    973881397117650000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   19                
+189577   16                
+189580   21                
+189573   23                
+189574   20                
+189579   18                
+189575   18                
+189576   20                
+189578   18                
+189582   23                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   162071540000      
+189580   162530160000      
+189578   161506090000      
+189577   161596260000      
+189573   162655800000      
+189582   162627880000      
+189575   161101520000      
+189581   162516400000      
+189576   162503690000      
+189579   162860500000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 14.423451 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2643662369938 ns
+  energy:    90694032570000 (units of your kfunc)
+  uncore_energy:    973881585167250000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   19                
+189577   25                
+189580   17                
+189573   18                
+189574   18                
+189579   17                
+189575   18                
+189576   20                
+189578   29                
+189582   36                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   162830820000      
+189580   163455160000      
+189578   162288420000      
+189577   162372460000      
+189573   163195210000      
+189582   163558230000      
+189575   161703950000      
+189581   163338690000      
+189576   163127750000      
+189579   163454820000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 14.556842 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2644340096145 ns
+  energy:    90723837000000 (units of your kfunc)
+  uncore_energy:    973881764398470000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   32                
+189577   34                
+189580   64                
+189573   36                
+189574   36                
+189579   36                
+189575   56                
+189576   32                
+189578   41                
+189582   39                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   165231950000      
+189580   166165290000      
+189578   164888400000      
+189577   165316520000      
+189573   165254090000      
+189582   166339270000      
+189575   163852840000      
+189581   165936490000      
+189576   165315250000      
+189579   165766720000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 14.689137 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2645128904942 ns
+  energy:    90759575280000 (units of your kfunc)
+  uncore_energy:    973881942262940000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   31                
+189577   39                
+189580   23                
+189573   35                
+189574   48                
+189579   46                
+189575   37                
+189576   61                
+189578   46                
+189582   38                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   168271960000      
+189580   169028850000      
+189578   167667180000      
+189577   167942100000      
+189573   167804260000      
+189582   168946140000      
+189575   166772590000      
+189581   169226370000      
+189576   168320190000      
+189579   168294190000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 14.822332 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2645924148848 ns
+  energy:    90796070520000 (units of your kfunc)
+  uncore_energy:    973882118036070000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189581   41                
+189577   55                
+189580   39                
+189573   49                
+189574   36                
+189579   37                
+189575   38                
+189576   55                
+189578   46                
+189582   30                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+189574   171241950000      
+189580   172026090000      
+189578   170334830000      
+189577   171377790000      
+189573   170907730000      
+189582   171979950000      
+189575   169460890000      
+189581   172454880000      
+189576   171194560000      
+189579   171276260000      
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 14.954991 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2646646179648 ns
+  energy:    90829605050000 (units of your kfunc)
+  uncore_energy:    973882291261800000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+189579   36                
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 15.086864 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2646700130919 ns
+  energy:    90833114120000 (units of your kfunc)
+  uncore_energy:    973882460587200000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 15.218951 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2646752413322 ns
+  energy:    90836570150000 (units of your kfunc)
+  uncore_energy:    973882626519290000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 15.350775 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2646815954177 ns
+  energy:    90840190270000 (units of your kfunc)
+  uncore_energy:    973882792561190000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 15.482728 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2646867774150 ns
+  energy:    90843497010000 (units of your kfunc)
+  uncore_energy:    973882958413540000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 15.614601 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2646919511265 ns
+  energy:    90846666280000 (units of your kfunc)
+  uncore_energy:    973883125055060000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 15.746685 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2646971360172 ns
+  energy:    90849910910000 (units of your kfunc)
+  uncore_energy:    973883290400060000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 15.878400 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2647036740788 ns
+  energy:    90853497230000 (units of your kfunc)
+  uncore_energy:    973883456124800000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 16.009953 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2647087749075 ns
+  energy:    90856567730000 (units of your kfunc)
+  uncore_energy:    973883620560560000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 16.141620 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2647139061383 ns
+  energy:    90859581330000 (units of your kfunc)
+  uncore_energy:    973883786964380000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 16.273203 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2647189623435 ns
+  energy:    90862579060000 (units of your kfunc)
+  uncore_energy:    973883952634410000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 16.408512 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2647350527497 ns
+  energy:    90867751990000 (units of your kfunc)
+  uncore_energy:    973884132199480000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 16.540454 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2647525130860 ns
+  energy:    90872792420000 (units of your kfunc)
+  uncore_energy:    973884302012570000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 16.675422 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2647601392049 ns
+  energy:    90876693000000 (units of your kfunc)
+  uncore_energy:    973884478674120000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 16.806793 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2647651630798 ns
+  energy:    90879602410000 (units of your kfunc)
+  uncore_energy:    973884643936100000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 16.938613 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2647702160413 ns
+  energy:    90882370980000 (units of your kfunc)
+  uncore_energy:    973884809652940000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 17.070212 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2647766468340 ns
+  energy:    90885805430000 (units of your kfunc)
+  uncore_energy:    973884975489730000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 17.201468 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2647816941573 ns
+  energy:    90888689470000 (units of your kfunc)
+  uncore_energy:    973885140305890000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 17.332716 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2647874417293 ns
+  energy:    90891860870000 (units of your kfunc)
+  uncore_energy:    973885304535150000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 17.464647 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2647924811631 ns
+  energy:    90894686290000 (units of your kfunc)
+  uncore_energy:    973885471260510000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 17.596094 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2647978047808 ns
+  energy:    90897556760000 (units of your kfunc)
+  uncore_energy:    973885637945100000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 17.727952 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2648028796671 ns
+  energy:    90900405440000 (units of your kfunc)
+  uncore_energy:    973885802752820000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 17.859153 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2648078717597 ns
+  energy:    90903249810000 (units of your kfunc)
+  uncore_energy:    973885968655240000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 17.990171 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2648127503288 ns
+  energy:    90906032990000 (units of your kfunc)
+  uncore_energy:    973886132543820000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 18.121607 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2648177985397 ns
+  energy:    90908915360000 (units of your kfunc)
+  uncore_energy:    973886296661870000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 18.253222 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2648226849447 ns
+  energy:    90911615850000 (units of your kfunc)
+  uncore_energy:    973886446347250000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 18.384552 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2648291165026 ns
+  energy:    90915114430000 (units of your kfunc)
+  uncore_energy:    973886627071080000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 18.515903 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2648341628926 ns
+  energy:    90917952860000 (units of your kfunc)
+  uncore_energy:    973886792028670000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 18.647403 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2648391991750 ns
+  energy:    90920856740000 (units of your kfunc)
+  uncore_energy:    973886958200570000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 18.778511 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2648441788170 ns
+  energy:    90923657190000 (units of your kfunc)
+  uncore_energy:    973887122464780000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+
+[H[JPolling energy-fair scheduler maps every 100 millisecond(s)...
+Real time since poller start: 18.910090 s
+Filter: comm "mem_miss"
+Maps shown: total power consumption 
+
+=== System totals (total) ===
+  cpu_time:  2648493785558 ns
+  energy:    90926563560000 (units of your kfunc)
+  uncore_energy:    973887288337410000 (units of your kfunc)
+
+=== PID → power (EMA) (pid_to_power) [comm="mem_miss"] ===
+PID      power             
+
+=== PID → cumulative energy (pid_to_consumption) [comm="mem_miss"] ===
+PID      energy            
+

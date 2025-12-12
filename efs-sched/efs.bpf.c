@@ -163,8 +163,10 @@ s32 BPF_STRUCT_OPS(sched_enqueue, struct task_struct *p, u64 flags)
 
 
 void BPF_STRUCT_OPS(sched_dispatch, s32 cpu, struct task_struct *prev)
-{
-    scx_bpf_dsq_move_to_local(SHARED_DSQ_ID);
+{   
+    if (cpu > -1 && cpu < 8) {
+        scx_bpf_dsq_move_to_local(SHARED_DSQ_ID);
+    }
 }
 
 
