@@ -35,4 +35,9 @@ sudo bpftool map pin name pid_to_consumpt /sys/fs/bpf/efs/pid_to_consumption
 sudo bpftool map pin name pid_to_power /sys/fs/bpf/efs/pid_to_power
 sudo bpftool map pin name cpu_to_prev_ene /sys/fs/bpf/efs/cpu_to_prev_energy
 sudo bpftool map pin name pid_to_run_star /sys/fs/bpf/efs/pid_to_run_start
-
+sudo bpftool map pin name pid_to_runtime /sys/fs/bpf/efs/pid_to_runtime
+sudo bpftool map pin name pid_to_dispatch /sys/fs/bpf/efs/pid_to_dispatches
+sudo bpftool map pin name pid_to_enqueue_ /sys/fs/bpf/efs/pid_to_enqueue_time
+sudo bpftool map pin name pid_to_wait_tim /sys/fs/bpf/efs/pid_to_wait_time
+sudo bpftool map pin name pid_to_last_cpu /sys/fs/bpf/efs/pid_to_last_cpu
+sudo bpftool map pin name cpu_to_prev_pkg /sys/fs/bpf/efs/cpu_to_prev_pkg

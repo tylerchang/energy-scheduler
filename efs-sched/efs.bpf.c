@@ -106,6 +106,55 @@ struct energy_measurement {
     u64 package_energy;
 };
 
+// PID → cumulative on-CPU runtime (ns)
+struct {
+    __uint(type, BPF_MAP_TYPE_HASH);
+    __uint(max_entries, 4096);
+    __type(key, u32);
+    __type(value, u64);
+} pid_to_runtime SEC(".maps");
+
+// PID → number of times scheduled onto CPU
+struct {
+    __uint(type, BPF_MAP_TYPE_HASH);
+    __uint(max_entries, 4096);
+    __type(key, u32);
+    __type(value, u64);
+} pid_to_dispatches SEC(".maps");
+
+// PID → last enqueue timestamp
+struct {
+    __uint(type, BPF_MAP_TYPE_HASH);
+    __uint(max_entries, 4096);
+    __type(key, u32);
+    __type(value, u64);
+} pid_to_enqueue_time SEC(".maps");
+
+// PID → cumulative wait time (ns)
+struct {
+    __uint(type, BPF_MAP_TYPE_HASH);
+    __uint(max_entries, 4096);
+    __type(key, u32);
+    __type(value, u64);
+} pid_to_wait_time SEC(".maps");
+
+// PID → last CPU executed on
+struct {
+    __uint(type, BPF_MAP_TYPE_HASH);
+    __uint(max_entries, 4096);
+    __type(key, u32);
+    __type(value, u32);
+} pid_to_last_cpu SEC(".maps");
+
+// CPU → previous package energy
+struct {
+    __uint(type, BPF_MAP_TYPE_HASH);
+    __uint(max_entries, 1024);
+    __type(key, u32);
+    __type(value, u64);
+} cpu_to_prev_pkg_energy SEC(".maps");
+
+
 extern void read_core_energy(struct energy_measurement* result) __ksym;
 
 // ----------------------------------------------------------------------------
@@ -144,6 +193,9 @@ s32 BPF_STRUCT_OPS(sched_enqueue, struct task_struct *p, u64 flags)
         if (tmp > 0)
             system_power = tmp;
     }
+
+    u64 now = bpf_ktime_get_ns();
+    bpf_map_update_elem(&pid_to_enqueue_time, &pid, &now, BPF_ANY);
 
     u64 *ppower = bpf_map_lookup_elem(&pid_to_power, &pid);
     if (ppower && *ppower)
@@ -205,7 +257,25 @@ void BPF_STRUCT_OPS(sched_running, struct task_struct *p)
 
     DBG(p, "[RUNNING]: comm=%s pid=%d cpu=%d cur_energy:%llu dram_energy:%llu gpu_energy:%llu\n", debug_prog, p->pid, cpu, cur_energy, dram_energy, gpu_energy);
 
-    // bpf_printk("RUNNING: PID=%d cpu=%d, cur_energy:%llu\n",pid,cpu,cur_energy);    
+    // bpf_printk("RUNNING: PID=%d cpu=%d, cur_energy:%llu\n",pid,cpu,cur_energy);
+
+    u64 *enq = bpf_map_lookup_elem(&pid_to_enqueue_time, &pid);
+    if (enq) {
+        u64 wait = now - *enq;
+        u64 *wt = bpf_map_lookup_elem(&pid_to_wait_time, &pid);
+        u64 new_wt = wt ? *wt + wait : wait;
+        bpf_map_update_elem(&pid_to_wait_time, &pid, &new_wt, BPF_ANY);
+    }
+
+    bpf_map_update_elem(&pid_to_last_cpu, &pid, &cpu, BPF_ANY);
+
+    bpf_map_update_elem(&cpu_to_prev_pkg_energy, &cpu,
+                    &result.package_energy, BPF_ANY);
+
+    
+    u64 *cnt = bpf_map_lookup_elem(&pid_to_dispatches, &pid);
+    u64 new_cnt = cnt ? *cnt + 1 : 1;
+    bpf_map_update_elem(&pid_to_dispatches, &pid, &new_cnt, BPF_ANY);
 
     // Remember when this PID started running
     bpf_map_update_elem(&pid_to_run_start, &pid, &now, BPF_ANY);
@@ -251,6 +321,9 @@ void BPF_STRUCT_OPS(sched_stopping, struct task_struct *p, bool runnable)
     if (delta_time == 0)
         delta_time = 1; // avoid div-by-zero
 
+    u64 *rt = bpf_map_lookup_elem(&pid_to_runtime, &pid);
+    u64 new_rt = rt ? *rt + delta_time : delta_time;
+    bpf_map_update_elem(&pid_to_runtime, &pid, &new_rt, BPF_ANY);
 
     if (*prev_energy == cur_energy){
         return;
@@ -299,7 +372,15 @@ void BPF_STRUCT_OPS(sched_stopping, struct task_struct *p, bool runnable)
         tot->cpu_time += delta_time;
         tot->energy   += delta_energy;
         bpf_printk("package energy: %llu\n", result.package_energy);
-        tot->uncore_energy = (10000 * result.package_energy) - tot->energy;
+        u64 *prev_pkg = bpf_map_lookup_elem(&cpu_to_prev_pkg_energy, &cpu);
+        if (prev_pkg) {
+            u64 delta_pkg = (result.package_energy - *prev_pkg) * 10000;
+            u64 delta_uncore = delta_pkg > delta_energy
+                            ? delta_pkg - delta_energy
+                            : 0;
+            tot->uncore_energy += delta_uncore;
+        }
+
         bpf_printk("new uncore: %llu\n", tot->uncore_energy);
     }
 
